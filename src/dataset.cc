@@ -210,10 +210,10 @@ bool KittiDataset::init(const utils::ConfigFile& cf)
 
     // auto left_fmt = Format("sequences/%02d/image_0/%s.png", sequence, "%06d");
     // auto right_fmt = Format("sequences/%02d/image_1/%s.png", sequence, "%06d");
-    // auto left_fmt = Format("images/%s_10.png", "%06d");
-    // auto right_fmt = Format("images/%s_11.png", "%06d");
-    auto left_fmt = Format("/images/%06d_10.png",sequence);
-    auto right_fmt = Format("/images/%06d_11.png",sequence);
+    auto left_fmt = Format("images/%s_10.png", "%06d");
+    auto right_fmt = Format("images/%s_11.png", "%06d");
+    // auto left_fmt = Format("images/%06d_10.png",sequence);
+    // auto right_fmt = Format("images/%06d_11.png",sequence);
     auto frame_start = cf.get<int>("FirstFrameNumber", 0);
 
     this->_left_filenames = make_unique<FileLoader>(root_dir, left_fmt, frame_start);
