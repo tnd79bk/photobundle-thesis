@@ -1,0 +1,16 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/duc/Desktop/Photometric/lib/eigen/eigen-3.3.4/test/product_symm.cpp"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"BuildOfficial"
+		],
+		"name" : "product_symm_4"
+	}
+}
