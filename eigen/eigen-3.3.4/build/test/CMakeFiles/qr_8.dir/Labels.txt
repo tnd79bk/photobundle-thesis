@@ -1,4 +1,0 @@
-# Target labels
- BuildOfficial
-# Source files and their labels
-/home/duc/Desktop/Photometric/lib/eigen/eigen-3.3.4/test/qr.cpp
