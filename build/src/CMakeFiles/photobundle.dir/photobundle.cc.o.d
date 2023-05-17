@@ -361,7 +361,7 @@ src/CMakeFiles/photobundle.dir/photobundle.cc.o: \
  /usr/local/include/ceres/internal/variadic_evaluate.h \
  /usr/local/include/ceres/types.h \
  /usr/local/include/ceres/internal/port.h \
- /home/duc/Desktop/Photometric/photobundle-master/lib/ceres-solver/ceres-solver-1.11.0/build/config/ceres/internal/config.h \
+ /home/duc/Desktop/Photometric/lib/ceres-solver/ceres-solver-1.11.0/build/config/ceres/internal/config.h \
  /usr/include/c++/5/tr1/memory /usr/include/c++/5/memory \
  /usr/include/c++/5/bits/stl_raw_storage_iter.h \
  /usr/include/c++/5/ext/concurrence.h \
