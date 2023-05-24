@@ -26,8 +26,14 @@ int main(int argc, char** argv)
       .parse(argc, argv);
 
   utils::ConfigFile cf(options.get<std::string>("config"));
+
+  // create kitti dataset
   auto dataset = Dataset::Create(options.get<std::string>("config"));
+
+  // Take baseline * focus length (intrinsic matrix)
   auto Bf = dataset->calibration().b() * dataset->calibration().fx();
+
+  // Take pose (extrinsic matrix)
   auto T_init = loadPosesKittiFormat(cf.get<std::string>("trajectory"));
 
   PhotometricBundleAdjustment::Result result;

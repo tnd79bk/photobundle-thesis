@@ -132,6 +132,7 @@ UniquePointer<DatasetFrame> StereoDataset::getFrame(int f_i) const
 
   frame.fn = image_fn;
 
+  // run stereo algorithms to outpyt disparity map : frame.D
   _stereo_alg->run(frame.I[0], frame.I[1], frame.D);
   return UniquePointer<DatasetFrame>(new StereoFrame(frame));
 }

@@ -281,6 +281,7 @@ T interp2(const Image& I, T xf, T yf, T fillval = 0.0, T offset = 0.0)
                +  yf  * ( I(yi+1, xi)*wx + I(yi+1, xi+1)*xf );
   } else
   {
+    // calculate value of pixel at location (xf,yf)
     if( xi == max_cols && yi < max_rows )
       return ( xf > 0 ) ? fillval : (1.0-yf)*I(yi,xi) + yf*I(yi+1, xi);
     else if( yi == max_rows && xi < max_cols )
@@ -295,6 +296,7 @@ T interp2(const Image& I, T xf, T yf, T fillval = 0.0, T offset = 0.0)
 
 template <int N> constexpr int square() { return N*N; }
 
+// calculate value pixel of patch
 template <int R, class ImageType, class ProjType, typename T = double>
 void interpolateFixedPatch(Vec_<T, square<2*R+1>()>& dst,
                            const ImageType& I, const ProjType& p,
