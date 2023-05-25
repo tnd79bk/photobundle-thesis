@@ -559,7 +559,7 @@ addFrame(const uint8_t* I_ptr, const float* Z_ptr, const Mat44& T, Result* resul
       auto z = Z(y,x);
       if(z >= _options.minValidDepth && z <= _options.maxValidDepth) {
         if(is_local_max(y, x)) {
-          Vec3 X = T_w * (z * _K_inv * Vec3(x, y, 1.0));
+          Vec3 X = T_w * (z * _K_inv * Vec3(x, y, 1.0)); // calculate 3d point X
 
           auto p = make_unique<ScenePoint>(X, _frame_id);
           Vec_<int,2> xy(x, y);
