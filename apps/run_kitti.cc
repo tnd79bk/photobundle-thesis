@@ -16,7 +16,6 @@ void sigHandler(int) { gStop = true; }
 
 int main(int argc, char** argv)
 {
-  
   signal(SIGINT, sigHandler);
 
   utils::ProgramOptions options;
@@ -60,6 +59,8 @@ int main(int argc, char** argv)
   auto output_fn = options.get<std::string>("output");
   Info("Writing refined poses to %s\n", output_fn.c_str());
   writePosesKittiFormat(output_fn, result.poses);
+
+  //RunKittiEvaluation("a","b","c");
 
   return 0;
 }
