@@ -20,6 +20,13 @@ int main(int argc, char** argv)
     writePosesKittiFormat("/home/duc/Desktop/Photometric/photobundle-master/apps/origin_poses_local.txt", origin_poses);
 
     auto init_poses = loadPosesKittiFormat("/home/duc/Desktop/Photometric/photobundle-master/data/kitti_init_poor/00.txt");
+    for(size_t i = 0; i < init_poses.size(); ++i) {  
+    for(int r = 0; r < 3; ++r) {
+      for(int c = 0; c < 4; ++c) {
+          init_poses[i](r,c) = init_poses[i](r,c) + 0.09;
+      }
+    }
+  } 
     
     auto refined_poses_global = loadPosesKittiFormat("/home/duc/Desktop/Photometric/photobundle-master/apps/refined_poses.txt");
     auto refined_poses = convertPoseToLocal(refined_poses_global);
@@ -44,7 +51,7 @@ int main(int argc, char** argv)
 
         //ofs << "frame" << i << " : " << (sqrt(abs(err_square_refined))) << " and "  << (sqrt(abs(err_square_init))) << " and "  << (sqrt(abs(err_square))) <<" \n";
         ofs << "frame" << i << " : " << (sqrt(fabs(err_square_refined))) << " and "  << (sqrt(fabs(err_square_init))) << " \n";
-        printf("%lf\n",sqrt(fabs(err_square_refined)));
+        printf("%lf and %lf\n",sqrt(fabs(err_square_refined)),sqrt(fabs(err_square_init)));
 
     }    
     return 0;

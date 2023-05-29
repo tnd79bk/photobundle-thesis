@@ -33,7 +33,16 @@ int main(int argc, char** argv)
   auto Bf = dataset->calibration().b() * dataset->calibration().fx();
 
   // Take pose (extrinsic matrix)
-  auto T_init = loadPosesKittiFormat(cf.get<std::string>("trajectory"));
+  auto T_init_global = loadPosesKittiFormat(cf.get<std::string>("trajectory"));
+  auto T_init = convertPoseToLocal(T_init_global);
+
+  // for(size_t i = 0; i < T_init.size(); ++i) {  
+  //   for(int r = 0; r < 3; ++r) {
+  //     for(int c = 0; c < 4; ++c) {
+  //         T_init[i](r,c) = T_init[i](r,c) + 0.09;
+  //     }
+  //   }
+  // }   
 
   PhotometricBundleAdjustment::Result result;
   PhotometricBundleAdjustment photoba(dataset->calibration(), dataset->imageSize(), {cf});
