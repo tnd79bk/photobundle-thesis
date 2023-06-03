@@ -20,8 +20,32 @@ BUILD_STATIC:BOOL=ON
 //The directory containing a CMake configuration file for Boost.
 Boost_DIR:PATH=Boost_DIR-NOTFOUND
 
+//Boost filesystem library (debug)
+Boost_FILESYSTEM_LIBRARY_DEBUG:FILEPATH=/usr/local/lib/libboost_filesystem.a
+
+//Boost filesystem library (release)
+Boost_FILESYSTEM_LIBRARY_RELEASE:FILEPATH=/usr/local/lib/libboost_filesystem.a
+
 //Path to a file.
 Boost_INCLUDE_DIR:PATH=/usr/local/include
+
+//Boost library directory DEBUG
+Boost_LIBRARY_DIR_DEBUG:PATH=/usr/local/lib
+
+//Boost library directory RELEASE
+Boost_LIBRARY_DIR_RELEASE:PATH=/usr/local/lib
+
+//Boost program_options library (debug)
+Boost_PROGRAM_OPTIONS_LIBRARY_DEBUG:FILEPATH=/usr/local/lib/libboost_program_options.a
+
+//Boost program_options library (release)
+Boost_PROGRAM_OPTIONS_LIBRARY_RELEASE:FILEPATH=/usr/local/lib/libboost_program_options.a
+
+//Boost system library (debug)
+Boost_SYSTEM_LIBRARY_DEBUG:FILEPATH=/usr/local/lib/libboost_system.a
+
+//Boost system library (release)
+Boost_SYSTEM_LIBRARY_RELEASE:FILEPATH=/usr/local/lib/libboost_system.a
 
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=/usr/bin/addr2line
@@ -225,25 +249,31 @@ OpenMP_gomp_LIBRARY:FILEPATH=/usr/lib/gcc/x86_64-linux-gnu/5/libgomp.so
 OpenMP_pthread_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libpthread.a
 
 //Path to a file.
-TBB_INCLUDE_DIRS:PATH=TBB_INCLUDE_DIRS-NOTFOUND
+TBB_INCLUDE_DIR:PATH=/usr/include
 
 //Path to a library.
-TBB_tbb_LIBRARY_DEBUG:FILEPATH=TBB_tbb_LIBRARY_DEBUG-NOTFOUND
+TBB_LIBRARY_DEBUG:FILEPATH=/usr/lib/x86_64-linux-gnu/libtbb.so
 
 //Path to a library.
-TBB_tbb_LIBRARY_RELEASE:FILEPATH=TBB_tbb_LIBRARY_RELEASE-NOTFOUND
+TBB_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libtbb.so
+
+//Path to a file.
+TBB_MALLOC_INCLUDE_DIR:PATH=/usr/include
 
 //Path to a library.
-TBB_tbb_preview_LIBRARY_DEBUG:FILEPATH=TBB_tbb_preview_LIBRARY_DEBUG-NOTFOUND
+TBB_MALLOC_LIBRARY_DEBUG:FILEPATH=/usr/lib/x86_64-linux-gnu/libtbbmalloc.so
 
 //Path to a library.
-TBB_tbb_preview_LIBRARY_RELEASE:FILEPATH=TBB_tbb_preview_LIBRARY_RELEASE-NOTFOUND
+TBB_MALLOC_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libtbbmalloc.so
+
+//Path to a file.
+TBB_MALLOC_PROXY_INCLUDE_DIR:PATH=/usr/include
 
 //Path to a library.
-TBB_tbbmalloc_LIBRARY_DEBUG:FILEPATH=TBB_tbbmalloc_LIBRARY_DEBUG-NOTFOUND
+TBB_MALLOC_PROXY_LIBRARY_DEBUG:FILEPATH=/usr/lib/x86_64-linux-gnu/libtbbmalloc_proxy.so
 
 //Path to a library.
-TBB_tbbmalloc_LIBRARY_RELEASE:FILEPATH=TBB_tbbmalloc_LIBRARY_RELEASE-NOTFOUND
+TBB_MALLOC_PROXY_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libtbbmalloc_proxy.so
 
 //compile with Matlab interface
 WITH_MATLAB:BOOL=OFF
@@ -255,7 +285,10 @@ WITH_OPENCV:BOOL=ON
 WITH_OPENMP:BOOL=ON
 
 //with Intel TBB
-WITH_TBB:BOOL=OFF
+WITH_TBB:BOOL=ON
+
+//The directory containing a CMake configuration file for glog.
+glog_DIR:PATH=glog_DIR-NOTFOUND
 
 //Value Computed by CMake
 photobundle_BINARY_DIR:STATIC=/home/duc/Desktop/Photometric/photobundle-master/build
@@ -276,8 +309,24 @@ photobundle_SOURCE_DIR:STATIC=/home/duc/Desktop/Photometric/photobundle-master
 
 //ADVANCED property for variable: Boost_DIR
 Boost_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_FILESYSTEM_LIBRARY_DEBUG
+Boost_FILESYSTEM_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_FILESYSTEM_LIBRARY_RELEASE
+Boost_FILESYSTEM_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Boost_INCLUDE_DIR
 Boost_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_LIBRARY_DIR_DEBUG
+Boost_LIBRARY_DIR_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_LIBRARY_DIR_RELEASE
+Boost_LIBRARY_DIR_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_PROGRAM_OPTIONS_LIBRARY_DEBUG
+Boost_PROGRAM_OPTIONS_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_PROGRAM_OPTIONS_LIBRARY_RELEASE
+Boost_PROGRAM_OPTIONS_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_SYSTEM_LIBRARY_DEBUG
+Boost_SYSTEM_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_SYSTEM_LIBRARY_RELEASE
+Boost_SYSTEM_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_ADDR2LINE
 CMAKE_ADDR2LINE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_AR
@@ -408,9 +457,13 @@ CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: EIGEN_INCLUDE_DIR
 EIGEN_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //Details about finding Boost
-FIND_PACKAGE_MESSAGE_DETAILS_Boost:INTERNAL=[/usr/local/include][c ][v1.59.0()]
+FIND_PACKAGE_MESSAGE_DETAILS_Boost:INTERNAL=[/usr/local/include][cfound components: filesystem system program_options ][v1.59.0(1.59.0)]
 //Details about finding Eigen
 FIND_PACKAGE_MESSAGE_DETAILS_Eigen:INTERNAL=[/usr/local/include/eigen3][v3.3.4()]
+//Details about finding OpenMP
+FIND_PACKAGE_MESSAGE_DETAILS_OpenMP:INTERNAL=[TRUE][c ][v4.0()]
+//Details about finding OpenMP_CXX
+FIND_PACKAGE_MESSAGE_DETAILS_OpenMP_CXX:INTERNAL=[-fopenmp][/usr/lib/gcc/x86_64-linux-gnu/5/libgomp.so][/usr/lib/x86_64-linux-gnu/libpthread.a][v4.0()]
 //ADVANCED property for variable: OpenCV_3RDPARTY_LIB_DIR_DBG
 OpenCV_3RDPARTY_LIB_DIR_DBG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: OpenCV_3RDPARTY_LIB_DIR_OPT
@@ -435,24 +488,32 @@ OpenMP_SPECTEST_CXX_:INTERNAL=TRUE
 OpenMP_gomp_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: OpenMP_pthread_LIBRARY
 OpenMP_pthread_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: TBB_INCLUDE_DIRS
-TBB_INCLUDE_DIRS-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: TBB_tbb_LIBRARY_DEBUG
-TBB_tbb_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: TBB_tbb_LIBRARY_RELEASE
-TBB_tbb_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: TBB_tbb_preview_LIBRARY_DEBUG
-TBB_tbb_preview_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: TBB_tbb_preview_LIBRARY_RELEASE
-TBB_tbb_preview_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: TBB_tbbmalloc_LIBRARY_DEBUG
-TBB_tbbmalloc_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: TBB_tbbmalloc_LIBRARY_RELEASE
-TBB_tbbmalloc_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: TBB_INCLUDE_DIR
+TBB_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: TBB_LIBRARY_DEBUG
+TBB_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: TBB_LIBRARY_RELEASE
+TBB_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: TBB_MALLOC_INCLUDE_DIR
+TBB_MALLOC_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: TBB_MALLOC_LIBRARY_DEBUG
+TBB_MALLOC_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: TBB_MALLOC_LIBRARY_RELEASE
+TBB_MALLOC_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: TBB_MALLOC_PROXY_INCLUDE_DIR
+TBB_MALLOC_PROXY_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: TBB_MALLOC_PROXY_LIBRARY_DEBUG
+TBB_MALLOC_PROXY_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: TBB_MALLOC_PROXY_LIBRARY_RELEASE
+TBB_MALLOC_PROXY_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 //Components requested for this build tree.
-_Boost_COMPONENTS_SEARCHED:INTERNAL=
+_Boost_COMPONENTS_SEARCHED:INTERNAL=filesystem;program_options;system
 //Last used Boost_INCLUDE_DIR value.
 _Boost_INCLUDE_DIR_LAST:INTERNAL=/usr/local/include
+//Last used Boost_LIBRARY_DIR_DEBUG value.
+_Boost_LIBRARY_DIR_DEBUG_LAST:INTERNAL=/usr/local/lib
+//Last used Boost_LIBRARY_DIR_RELEASE value.
+_Boost_LIBRARY_DIR_RELEASE_LAST:INTERNAL=/usr/local/lib
 //Last used Boost_NAMESPACE value.
 _Boost_NAMESPACE_LAST:INTERNAL=boost
 //Last used Boost_USE_MULTITHREADED value.

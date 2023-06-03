@@ -12,7 +12,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH}
 
 option(BUILD_STATIC   "Build static libraries"  ON)
 
-option(WITH_TBB      "with Intel TBB"          OFF)
+option(WITH_TBB      "with Intel TBB"          ON)
 option(WITH_OPENMP   "with openmp"             ON)
 option(WITH_OPENCV   "with opencv"             ON)
 
@@ -54,8 +54,8 @@ include_directories(${CMAKE_SOURCE_DIR}/src)
 
 
 
-find_package(TBB QUIET)
-find_package(OpenMP QUIET)
+find_package(TBB REQUIRED)
+find_package(OpenMP REQUIRED)
 #find_package(OpenCV REQUIRED PATHS "/home/duc/Desktop/Photometric/photobundle-master/lib/opencv/opencv-2.4.9")
 find_package(OpenCV REQUIRED)
 if(TBB_FOUND AND WITH_TBB)
@@ -78,16 +78,16 @@ endif()
 set(Boost_USE_MULTITHREAD ON)
 set(Boost_USE_STATIC_LIBS ON)
 set(Boost_USE_STATIC_RUNTIME ON)
-#find_package(Boost 1.59.0 REQUIRED COMPONENTS filesystem system program_options PATHS /home/PBA/boost_1_59_0)	
-#add_definitions(${Boost_LIB_DIAGNOSTIC_DEFINITIONS})
-#add_definitions(-DWITH_BOOST)
-#add_definitions(-DWITH_SIMD)
-#include_directories(${Boost_INCLUDE_DIRS})
-#list(APPEND MY_LIBRARIES ${Boost_LIBRARIES})
+find_package(Boost 1.59.0 REQUIRED COMPONENTS filesystem system program_options )	
+add_definitions(${Boost_LIB_DIAGNOSTIC_DEFINITIONS})
+add_definitions(-DWITH_BOOST)
+add_definitions(-DWITH_SIMD)
+include_directories(${Boost_INCLUDE_DIRS})
+list(APPEND MY_LIBRARIES ${Boost_LIBRARIES})
 
 #Tao duong dan den boost
 #set(Boost_INCLUDE_DIRS /home/duc/Desktop/Photometric/photobundle-master/lib/boost/boost_1_59_0/boost)
-find_package(Boost REQUIRED )
+#find_package(Boost REQUIRED )
 include_directories(${Boost_INCLUDE_DIRS})
 
 add_subdirectory(src)

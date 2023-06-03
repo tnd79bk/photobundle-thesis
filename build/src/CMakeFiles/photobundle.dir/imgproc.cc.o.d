@@ -355,6 +355,39 @@ src/CMakeFiles/photobundle.dir/imgproc.cc.o: \
  /usr/include/c++/5/backward/auto_ptr.h \
  /home/duc/Desktop/Photometric/photobundle-master/src/debug.h \
  /home/duc/Desktop/Photometric/photobundle-master/src/v128.h \
+ /usr/include/tbb/blocked_range.h /usr/include/oneapi/tbb/blocked_range.h \
+ /usr/include/oneapi/tbb/detail/_range_common.h \
+ /usr/include/oneapi/tbb/detail/_config.h \
+ /usr/include/oneapi/tbb/detail/_export.h \
+ /usr/include/oneapi/tbb/detail/_utils.h /usr/include/c++/5/atomic \
+ /usr/include/oneapi/tbb/detail/_assert.h \
+ /usr/include/oneapi/tbb/detail/_machine.h /usr/include/c++/5/thread \
+ /usr/include/c++/5/chrono /usr/include/c++/5/ratio \
+ /usr/include/c++/5/ctime /usr/include/c++/5/bits/parse_numbers.h \
+ /usr/include/oneapi/tbb/detail/_namespace_injection.h \
+ /usr/include/oneapi/tbb/version.h \
+ /usr/include/oneapi/tbb/detail/_config.h /usr/include/tbb/parallel_for.h \
+ /usr/include/oneapi/tbb/parallel_for.h \
+ /usr/include/oneapi/tbb/detail/_exception.h \
+ /usr/include/oneapi/tbb/detail/_task.h \
+ /usr/include/oneapi/tbb/detail/_template_helpers.h \
+ /usr/include/c++/5/iterator /usr/include/c++/5/bits/stream_iterator.h \
+ /usr/include/oneapi/tbb/detail/_small_object_pool.h \
+ /usr/include/oneapi/tbb/profiling.h \
+ /usr/include/oneapi/tbb/detail/_string_resource.h \
+ /usr/include/c++/5/mutex \
+ /usr/include/oneapi/tbb/detail/_small_object_pool.h \
+ /usr/include/oneapi/tbb/profiling.h \
+ /usr/include/oneapi/tbb/partitioner.h \
+ /usr/include/oneapi/tbb/detail/_aligned_space.h \
+ /usr/include/oneapi/tbb/detail/_utils.h \
+ /usr/include/oneapi/tbb/detail/_template_helpers.h \
+ /usr/include/oneapi/tbb/cache_aligned_allocator.h \
+ /usr/include/oneapi/tbb/task_group.h \
+ /usr/include/oneapi/tbb/detail/_assert.h \
+ /usr/include/oneapi/tbb/detail/_intrusive_list_node.h \
+ /usr/include/oneapi/tbb/task_arena.h /usr/include/oneapi/tbb/info.h \
+ /usr/include/oneapi/tbb/blocked_range.h \
  /usr/local/include/opencv2/imgproc/imgproc.hpp \
  /usr/local/include/opencv2/core/core.hpp \
  /usr/local/include/opencv2/core/types_c.h \

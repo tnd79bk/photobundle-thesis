@@ -130,20 +130,6 @@ run_kitti/fast:
 	cd /home/duc/Desktop/Photometric/photobundle-master/build && $(MAKE) $(MAKESILENT) -f apps/CMakeFiles/run_kitti.dir/build.make apps/CMakeFiles/run_kitti.dir/build
 .PHONY : run_kitti/fast
 
-# Convenience name for target.
-apps/CMakeFiles/test_kitti_stereo.dir/rule:
-	cd /home/duc/Desktop/Photometric/photobundle-master/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 apps/CMakeFiles/test_kitti_stereo.dir/rule
-.PHONY : apps/CMakeFiles/test_kitti_stereo.dir/rule
-
-# Convenience name for target.
-test_kitti_stereo: apps/CMakeFiles/test_kitti_stereo.dir/rule
-.PHONY : test_kitti_stereo
-
-# fast build rule for target.
-test_kitti_stereo/fast:
-	cd /home/duc/Desktop/Photometric/photobundle-master/build && $(MAKE) $(MAKESILENT) -f apps/CMakeFiles/test_kitti_stereo.dir/build.make apps/CMakeFiles/test_kitti_stereo.dir/build
-.PHONY : test_kitti_stereo/fast
-
 run_kitti.o: run_kitti.cc.o
 .PHONY : run_kitti.o
 
@@ -168,30 +154,6 @@ run_kitti.cc.s:
 	cd /home/duc/Desktop/Photometric/photobundle-master/build && $(MAKE) $(MAKESILENT) -f apps/CMakeFiles/run_kitti.dir/build.make apps/CMakeFiles/run_kitti.dir/run_kitti.cc.s
 .PHONY : run_kitti.cc.s
 
-test_kitti_stereo.o: test_kitti_stereo.cc.o
-.PHONY : test_kitti_stereo.o
-
-# target to build an object file
-test_kitti_stereo.cc.o:
-	cd /home/duc/Desktop/Photometric/photobundle-master/build && $(MAKE) $(MAKESILENT) -f apps/CMakeFiles/test_kitti_stereo.dir/build.make apps/CMakeFiles/test_kitti_stereo.dir/test_kitti_stereo.cc.o
-.PHONY : test_kitti_stereo.cc.o
-
-test_kitti_stereo.i: test_kitti_stereo.cc.i
-.PHONY : test_kitti_stereo.i
-
-# target to preprocess a source file
-test_kitti_stereo.cc.i:
-	cd /home/duc/Desktop/Photometric/photobundle-master/build && $(MAKE) $(MAKESILENT) -f apps/CMakeFiles/test_kitti_stereo.dir/build.make apps/CMakeFiles/test_kitti_stereo.dir/test_kitti_stereo.cc.i
-.PHONY : test_kitti_stereo.cc.i
-
-test_kitti_stereo.s: test_kitti_stereo.cc.s
-.PHONY : test_kitti_stereo.s
-
-# target to generate assembly for a file
-test_kitti_stereo.cc.s:
-	cd /home/duc/Desktop/Photometric/photobundle-master/build && $(MAKE) $(MAKESILENT) -f apps/CMakeFiles/test_kitti_stereo.dir/build.make apps/CMakeFiles/test_kitti_stereo.dir/test_kitti_stereo.cc.s
-.PHONY : test_kitti_stereo.cc.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -201,13 +163,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... run_kitti"
-	@echo "... test_kitti_stereo"
 	@echo "... run_kitti.o"
 	@echo "... run_kitti.i"
 	@echo "... run_kitti.s"
-	@echo "... test_kitti_stereo.o"
-	@echo "... test_kitti_stereo.i"
-	@echo "... test_kitti_stereo.s"
 .PHONY : help
 
 

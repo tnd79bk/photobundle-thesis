@@ -25,6 +25,8 @@ bool writePosesKittiFormat(std::string, const PoseList&);
  */
 PoseList convertPoseToLocal(const PoseList&);
 
+PoseList convertPoseToWorld(const PoseList&);
+
 /**
  * Reports performance using the KITTI benchmark meteric
  */

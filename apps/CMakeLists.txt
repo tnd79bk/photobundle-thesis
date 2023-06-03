@@ -1,4 +1,4 @@
-file(GLOB src "*.cc")
+file(GLOB src "run_kitti.cc")
 foreach(f ${src})
   get_filename_component(bname ${f} NAME_WE)
   add_executable(${bname} ${f})

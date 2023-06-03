@@ -156,6 +156,7 @@ apps/CMakeFiles/run_kitti.dir/run_kitti.cc.o: \
  /usr/include/c++/5/bits/stl_uninitialized.h \
  /usr/include/c++/5/bits/stl_vector.h \
  /usr/include/c++/5/bits/stl_bvector.h /usr/include/c++/5/bits/vector.tcc \
+ /usr/include/c++/5/bits/uniform_int_dist.h \
  /usr/include/x86_64-linux-gnu/c++/5/bits/opt_random.h \
  /usr/lib/gcc/x86_64-linux-gnu/5/include/x86intrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/5/include/ia32intrin.h \
@@ -245,8 +246,9 @@ apps/CMakeFiles/run_kitti.dir/run_kitti.cc.o: \
  /usr/local/include/ceres/iteration_callback.h \
  /usr/local/include/ceres/types.h \
  /usr/local/include/ceres/internal/port.h \
- /usr/local/include/ceres/internal/config.h /usr/include/c++/5/tr1/memory \
- /usr/include/c++/5/memory /usr/include/c++/5/bits/stl_raw_storage_iter.h \
+ /home/duc/Desktop/Photometric/lib/ceres-solver/ceres-solver-1.11.0/build/config/ceres/internal/config.h \
+ /usr/include/c++/5/tr1/memory /usr/include/c++/5/memory \
+ /usr/include/c++/5/bits/stl_raw_storage_iter.h \
  /usr/include/c++/5/typeinfo /usr/include/c++/5/ext/concurrence.h \
  /usr/include/c++/5/functional /usr/include/c++/5/bits/unique_ptr.h \
  /usr/include/c++/5/bits/shared_ptr.h \

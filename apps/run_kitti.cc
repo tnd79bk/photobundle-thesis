@@ -20,7 +20,7 @@ int main(int argc, char** argv)
 
   utils::ProgramOptions options;
   options
-      ("output,o", "refined_poses.txt", "trajectory output file")
+      ("output,o", "refined_poses_cache.txt", "trajectory output file")
       ("config,c", "../config/kitti_stereo.cfg", "config file")
       .parse(argc, argv);
 
@@ -33,8 +33,8 @@ int main(int argc, char** argv)
   auto Bf = dataset->calibration().b() * dataset->calibration().fx();
 
   // Take pose (extrinsic matrix)
-  auto T_init_global = loadPosesKittiFormat(cf.get<std::string>("trajectory"));
-  auto T_init = convertPoseToLocal(T_init_global);
+  auto T_init = loadPosesKittiFormat(cf.get<std::string>("trajectory"));
+  //auto T_init = convertPoseToLocal(T_init_global);
 
   // for(size_t i = 0; i < T_init.size(); ++i) {  
   //   for(int r = 0; r < 3; ++r) {
@@ -53,6 +53,7 @@ int main(int argc, char** argv)
   UniquePointer<DatasetFrame> frame;
   for(int f_i = 0; (frame = dataset->getFrame(f_i)) && !gStop; ++f_i) {
     printf("Frame %05d\n", f_i);
+
 
     disparityToDepth(frame->disparity(), Bf, zmap);
 

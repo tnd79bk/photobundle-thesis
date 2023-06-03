@@ -1706,4 +1706,8 @@ src/CMakeFiles/photobundle.dir/photobundle.cc.o: \
  /usr/local/include/boost/log/detail/is_character_type.hpp \
  /usr/local/include/boost/log/utility/string_literal_fwd.hpp \
  /usr/local/include/boost/log/utility/formatting_ostream_fwd.hpp \
+ /usr/include/c++/5/fstream \
+ /usr/include/x86_64-linux-gnu/c++/5/bits/basic_file.h \
+ /usr/include/x86_64-linux-gnu/c++/5/bits/c++io.h \
+ /usr/include/c++/5/bits/fstream.tcc \
  /usr/local/include/eigen3/Eigen/Geometry

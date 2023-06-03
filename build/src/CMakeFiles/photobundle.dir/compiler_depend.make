@@ -5183,6 +5183,47 @@ src/CMakeFiles/photobundle.dir/imgproc.cc.o: ../src/imgproc.cc \
   /usr/include/c++/5/backward/auto_ptr.h \
   ../src/debug.h \
   ../src/v128.h \
+  /usr/include/tbb/blocked_range.h \
+  /usr/include/oneapi/tbb/blocked_range.h \
+  /usr/include/oneapi/tbb/detail/_range_common.h \
+  /usr/include/oneapi/tbb/detail/_config.h \
+  /usr/include/oneapi/tbb/detail/_export.h \
+  /usr/include/oneapi/tbb/detail/_utils.h \
+  /usr/include/c++/5/atomic \
+  /usr/include/oneapi/tbb/detail/_assert.h \
+  /usr/include/oneapi/tbb/detail/_machine.h \
+  /usr/include/c++/5/thread \
+  /usr/include/c++/5/chrono \
+  /usr/include/c++/5/ratio \
+  /usr/include/c++/5/ctime \
+  /usr/include/c++/5/bits/parse_numbers.h \
+  /usr/include/oneapi/tbb/detail/_namespace_injection.h \
+  /usr/include/oneapi/tbb/version.h \
+  /usr/include/oneapi/tbb/detail/_config.h \
+  /usr/include/tbb/parallel_for.h \
+  /usr/include/oneapi/tbb/parallel_for.h \
+  /usr/include/oneapi/tbb/detail/_exception.h \
+  /usr/include/oneapi/tbb/detail/_task.h \
+  /usr/include/oneapi/tbb/detail/_template_helpers.h \
+  /usr/include/c++/5/iterator \
+  /usr/include/c++/5/bits/stream_iterator.h \
+  /usr/include/oneapi/tbb/detail/_small_object_pool.h \
+  /usr/include/oneapi/tbb/profiling.h \
+  /usr/include/oneapi/tbb/detail/_string_resource.h \
+  /usr/include/c++/5/mutex \
+  /usr/include/oneapi/tbb/detail/_small_object_pool.h \
+  /usr/include/oneapi/tbb/profiling.h \
+  /usr/include/oneapi/tbb/partitioner.h \
+  /usr/include/oneapi/tbb/detail/_aligned_space.h \
+  /usr/include/oneapi/tbb/detail/_utils.h \
+  /usr/include/oneapi/tbb/detail/_template_helpers.h \
+  /usr/include/oneapi/tbb/cache_aligned_allocator.h \
+  /usr/include/oneapi/tbb/task_group.h \
+  /usr/include/oneapi/tbb/detail/_assert.h \
+  /usr/include/oneapi/tbb/detail/_intrusive_list_node.h \
+  /usr/include/oneapi/tbb/task_arena.h \
+  /usr/include/oneapi/tbb/info.h \
+  /usr/include/oneapi/tbb/blocked_range.h \
   /usr/local/include/opencv2/imgproc/imgproc.hpp \
   /usr/local/include/opencv2/core/core.hpp \
   /usr/local/include/opencv2/core/types_c.h \
@@ -7041,6 +7082,10 @@ src/CMakeFiles/photobundle.dir/photobundle.cc.o: ../src/photobundle.cc \
   /usr/local/include/boost/log/detail/is_character_type.hpp \
   /usr/local/include/boost/log/utility/string_literal_fwd.hpp \
   /usr/local/include/boost/log/utility/formatting_ostream_fwd.hpp \
+  /usr/include/c++/5/fstream \
+  /usr/include/x86_64-linux-gnu/c++/5/bits/basic_file.h \
+  /usr/include/x86_64-linux-gnu/c++/5/bits/c++io.h \
+  /usr/include/c++/5/bits/fstream.tcc \
   /usr/local/include/eigen3/Eigen/Geometry
 
 src/CMakeFiles/photobundle.dir/photobundle_pyramid.cc.o: ../src/photobundle_pyramid.cc \
@@ -13772,7 +13817,74 @@ src/CMakeFiles/photobundle.dir/utils.cc.o: ../src/utils.cc \
   /usr/include/c++/5/fstream \
   /usr/include/x86_64-linux-gnu/c++/5/bits/basic_file.h \
   /usr/include/x86_64-linux-gnu/c++/5/bits/c++io.h \
-  /usr/include/c++/5/bits/fstream.tcc
+  /usr/include/c++/5/bits/fstream.tcc \
+  /usr/local/include/boost/filesystem.hpp \
+  /usr/local/include/boost/filesystem/path.hpp \
+  /usr/local/include/boost/filesystem/path_traits.hpp \
+  /usr/local/include/boost/system/error_code.hpp \
+  /usr/local/include/boost/cerrno.hpp \
+  /usr/include/c++/5/list \
+  /usr/include/c++/5/bits/stl_list.h \
+  /usr/include/c++/5/bits/list.tcc \
+  /usr/local/include/boost/system/system_error.hpp \
+  /usr/local/include/boost/io/detail/quoted_manip.hpp \
+  /usr/local/include/boost/io/ios_state.hpp \
+  /usr/local/include/boost/io_fwd.hpp \
+  /usr/local/include/boost/filesystem/operations.hpp \
+  /usr/local/include/boost/detail/scoped_enum_emulation.hpp \
+  /usr/local/include/boost/core/scoped_enum.hpp \
+  /usr/local/include/boost/detail/bitmask.hpp \
+  /usr/include/c++/5/stack \
+  /usr/include/c++/5/deque \
+  /usr/include/c++/5/bits/stl_deque.h \
+  /usr/include/c++/5/bits/deque.tcc \
+  /usr/include/c++/5/bits/stl_stack.h \
+  /usr/local/include/boost/filesystem/convenience.hpp \
+  /usr/local/include/boost/algorithm/string.hpp \
+  /usr/local/include/boost/algorithm/string/std_containers_traits.hpp \
+  /usr/local/include/boost/algorithm/string/std/string_traits.hpp \
+  /usr/local/include/boost/algorithm/string/yes_no_type.hpp \
+  /usr/local/include/boost/algorithm/string/sequence_traits.hpp \
+  /usr/local/include/boost/algorithm/string/std/list_traits.hpp \
+  /usr/local/include/boost/algorithm/string/std/slist_traits.hpp \
+  /usr/local/include/boost/algorithm/string/config.hpp \
+  /usr/include/c++/5/ext/slist \
+  /usr/local/include/boost/algorithm/string/trim.hpp \
+  /usr/local/include/boost/range/as_literal.hpp \
+  /usr/local/include/boost/range/iterator_range.hpp \
+  /usr/local/include/boost/range/iterator_range_io.hpp \
+  /usr/local/include/boost/range/detail/str_types.hpp \
+  /usr/local/include/boost/algorithm/string/detail/trim.hpp \
+  /usr/local/include/boost/algorithm/string/classification.hpp \
+  /usr/local/include/boost/algorithm/string/detail/classification.hpp \
+  /usr/local/include/boost/algorithm/string/predicate_facade.hpp \
+  /usr/local/include/boost/algorithm/string/case_conv.hpp \
+  /usr/local/include/boost/iterator/transform_iterator.hpp \
+  /usr/local/include/boost/algorithm/string/detail/case_conv.hpp \
+  /usr/local/include/boost/algorithm/string/predicate.hpp \
+  /usr/local/include/boost/algorithm/string/compare.hpp \
+  /usr/local/include/boost/algorithm/string/find.hpp \
+  /usr/local/include/boost/algorithm/string/finder.hpp \
+  /usr/local/include/boost/algorithm/string/constants.hpp \
+  /usr/local/include/boost/algorithm/string/detail/finder.hpp \
+  /usr/local/include/boost/algorithm/string/detail/predicate.hpp \
+  /usr/local/include/boost/algorithm/string/split.hpp \
+  /usr/local/include/boost/algorithm/string/iter_find.hpp \
+  /usr/local/include/boost/algorithm/string/concept.hpp \
+  /usr/local/include/boost/algorithm/string/find_iterator.hpp \
+  /usr/local/include/boost/algorithm/string/detail/find_iterator.hpp \
+  /usr/local/include/boost/algorithm/string/detail/util.hpp \
+  /usr/local/include/boost/algorithm/string/join.hpp \
+  /usr/local/include/boost/algorithm/string/detail/sequence.hpp \
+  /usr/local/include/boost/algorithm/string/replace.hpp \
+  /usr/local/include/boost/algorithm/string/find_format.hpp \
+  /usr/local/include/boost/algorithm/string/detail/find_format.hpp \
+  /usr/local/include/boost/algorithm/string/detail/find_format_store.hpp \
+  /usr/local/include/boost/algorithm/string/detail/replace_storage.hpp \
+  /usr/local/include/boost/algorithm/string/detail/find_format_all.hpp \
+  /usr/local/include/boost/algorithm/string/formatter.hpp \
+  /usr/local/include/boost/algorithm/string/detail/formatter.hpp \
+  /usr/local/include/boost/algorithm/string/erase.hpp
 
 src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
   /usr/include/stdc-predef.h \
@@ -13959,6 +14071,40 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 
 ../src/v128.cc:
 
+/usr/local/include/boost/algorithm/string/erase.hpp:
+
+/usr/local/include/boost/algorithm/string/formatter.hpp:
+
+/usr/local/include/boost/algorithm/string/detail/replace_storage.hpp:
+
+/usr/local/include/boost/algorithm/string/replace.hpp:
+
+/usr/local/include/boost/algorithm/string/detail/sequence.hpp:
+
+/usr/local/include/boost/algorithm/string/detail/util.hpp:
+
+/usr/local/include/boost/algorithm/string/find_iterator.hpp:
+
+/usr/local/include/boost/algorithm/string/constants.hpp:
+
+/usr/local/include/boost/algorithm/string/predicate.hpp:
+
+/usr/local/include/boost/iterator/transform_iterator.hpp:
+
+/usr/local/include/boost/range/as_literal.hpp:
+
+/usr/local/include/boost/algorithm/string/trim.hpp:
+
+/usr/local/include/boost/algorithm/string/config.hpp:
+
+/usr/local/include/boost/algorithm/string/yes_no_type.hpp:
+
+/usr/local/include/boost/detail/scoped_enum_emulation.hpp:
+
+/usr/local/include/boost/filesystem/operations.hpp:
+
+/usr/local/include/boost/filesystem/path.hpp:
+
 /usr/include/c++/5/cstdarg:
 
 /usr/include/glob.h:
@@ -13983,6 +14129,8 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 
 /usr/include/linux/posix_types.h:
 
+/usr/local/include/boost/algorithm/string/std/string_traits.hpp:
+
 /usr/include/asm-generic/types.h:
 
 /usr/include/x86_64-linux-gnu/asm/types.h:
@@ -14000,10 +14148,6 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 ../src/types.cc:
 
 ../src/trajectory.cc:
-
-/usr/include/c++/5/bits/parse_numbers.h:
-
-/usr/include/c++/5/chrono:
 
 /usr/lib/gcc/x86_64-linux-gnu/5/include/nmmintrin.h:
 
@@ -14117,9 +14261,7 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 
 /usr/local/include/eigen3/Eigen/src/Eigenvalues/RealQZ.h:
 
-/usr/include/execinfo.h:
-
-/usr/local/include/eigen3/Eigen/src/Eigenvalues/GeneralizedSelfAdjointEigenSolver.h:
+/usr/local/include/boost/algorithm/string/detail/find_format_all.hpp:
 
 /usr/local/include/eigen3/Eigen/src/Eigenvalues/SelfAdjointEigenSolver.h:
 
@@ -14171,9 +14313,43 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 
 /usr/local/include/eigen3/Eigen/src/LU/PartialPivLU.h:
 
+/usr/include/c++/5/ext/slist:
+
 /usr/local/include/eigen3/Eigen/src/LU/FullPivLU.h:
 
 /usr/local/include/eigen3/Eigen/LU:
+
+/usr/include/oneapi/tbb/task_group.h:
+
+/usr/include/oneapi/tbb/cache_aligned_allocator.h:
+
+/usr/include/execinfo.h:
+
+/usr/local/include/eigen3/Eigen/src/Eigenvalues/GeneralizedSelfAdjointEigenSolver.h:
+
+/usr/include/oneapi/tbb/detail/_aligned_space.h:
+
+/usr/include/oneapi/tbb/partitioner.h:
+
+/usr/include/oneapi/tbb/detail/_string_resource.h:
+
+/usr/include/oneapi/tbb/detail/_small_object_pool.h:
+
+/usr/include/oneapi/tbb/detail/_task.h:
+
+/usr/include/oneapi/tbb/parallel_for.h:
+
+/usr/include/oneapi/tbb/version.h:
+
+/usr/include/c++/5/bits/parse_numbers.h:
+
+/usr/include/c++/5/chrono:
+
+/usr/include/oneapi/tbb/detail/_machine.h:
+
+/usr/include/oneapi/tbb/detail/_export.h:
+
+/usr/include/oneapi/tbb/detail/_config.h:
 
 ../src/v128.h:
 
@@ -14194,6 +14370,8 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 ../src/stereo_algorithm.h:
 
 /usr/local/include/boost/log/utility/formatting_ostream_fwd.hpp:
+
+/usr/local/include/boost/filesystem/path_traits.hpp:
 
 /usr/local/include/boost/log/utility/string_literal_fwd.hpp:
 
@@ -14223,6 +14401,8 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 
 /usr/local/include/boost/detail/atomic_count.hpp:
 
+/usr/local/include/boost/cerrno.hpp:
+
 /usr/include/inttypes.h:
 
 /usr/local/include/boost/log/core/record_view.hpp:
@@ -14232,6 +14412,8 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 /usr/local/include/boost/log/attributes/value_extraction_fwd.hpp:
 
 /usr/local/include/boost/log/utility/type_dispatch/type_dispatcher.hpp:
+
+/usr/local/include/boost/io/detail/quoted_manip.hpp:
 
 /usr/local/include/boost/log/attributes/attribute_name.hpp:
 
@@ -14244,6 +14426,8 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 /usr/local/include/boost/log/sources/basic_logger.hpp:
 
 /usr/local/include/boost/log/detail/footer.hpp:
+
+/usr/local/include/boost/algorithm/string/find_format.hpp:
 
 /usr/local/include/boost/config/abi_prefix.hpp:
 
@@ -14365,6 +14549,8 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 
 /usr/local/include/boost/fusion/algorithm/transformation/remove.hpp:
 
+/usr/local/include/boost/algorithm/string/detail/case_conv.hpp:
+
 /usr/local/include/boost/fusion/container/vector/detail/cpp03/preprocessed/as_vector10.hpp:
 
 /usr/local/include/boost/fusion/container/vector/detail/cpp03/preprocessed/as_vector.hpp:
@@ -14415,6 +14601,8 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 
 /usr/local/include/boost/fusion/view/transform_view/transform_view_iterator.hpp:
 
+/usr/include/oneapi/tbb/detail/_namespace_injection.h:
+
 /usr/local/include/boost/fusion/algorithm/transformation/transform.hpp:
 
 /usr/local/include/boost/fusion/view/zip_view/zip_view_iterator_fwd.hpp:
@@ -14422,6 +14610,8 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 /usr/local/include/boost/fusion/view/zip_view/detail/begin_impl.hpp:
 
 /usr/local/include/boost/fusion/algorithm/iteration/detail/segmented_fold.hpp:
+
+/usr/local/include/boost/algorithm/string/predicate_facade.hpp:
 
 /usr/include/c++/5/ratio:
 
@@ -14464,6 +14654,8 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 /usr/local/include/boost/mpl/aux_/insert_impl.hpp:
 
 /usr/local/include/boost/mpl/insert_fwd.hpp:
+
+/usr/local/include/boost/algorithm/string/find.hpp:
 
 /usr/local/include/boost/fusion/mpl/insert.hpp:
 
@@ -14509,7 +14701,11 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 
 /usr/local/include/boost/intrusive/detail/config_end.hpp:
 
+/usr/include/oneapi/tbb/detail/_template_helpers.h:
+
 /usr/local/include/boost/fusion/container/vector/detail/end_impl.hpp:
+
+/usr/include/oneapi/tbb/detail/_assert.h:
 
 /usr/local/include/boost/fusion/container/vector/detail/equal_to_impl.hpp:
 
@@ -14523,6 +14719,8 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 
 /usr/local/include/boost/fusion/container/vector/detail/at_impl.hpp:
 
+/usr/include/oneapi/tbb/profiling.h:
+
 /usr/local/include/boost/fusion/container/vector/detail/cpp03/vector10_fwd.hpp:
 
 /usr/local/include/boost/fusion/container/vector/detail/cpp03/vector10.hpp:
@@ -14530,6 +14728,8 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 /usr/local/include/boost/preprocessor/comparison/not_equal.hpp:
 
 /usr/local/include/boost/fusion/container/vector/detail/cpp03/limits.hpp:
+
+/usr/include/c++/5/atomic:
 
 /usr/local/include/boost/fusion/container/vector/vector_fwd.hpp:
 
@@ -14559,6 +14759,8 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 
 /usr/local/include/boost/mpl/aux_/has_key_impl.hpp:
 
+/usr/include/oneapi/tbb/detail/_exception.h:
+
 /usr/local/include/boost/mpl/has_key_fwd.hpp:
 
 /usr/local/include/boost/mpl/has_key.hpp:
@@ -14568,6 +14770,8 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 /usr/local/include/boost/fusion/adapted/mpl/detail/size_impl.hpp:
 
 /usr/local/include/boost/fusion/adapted/mpl/detail/is_sequence_impl.hpp:
+
+/usr/local/include/boost/algorithm/string/iter_find.hpp:
 
 /usr/local/include/boost/fusion/iterator/mpl.hpp:
 
@@ -14623,6 +14827,8 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 
 /usr/local/include/boost/fusion/iterator/detail/adapt_value_traits.hpp:
 
+/usr/local/include/boost/algorithm/string/concept.hpp:
+
 /usr/local/include/boost/fusion/view/joint_view/detail/deref_impl.hpp:
 
 /usr/local/include/boost/fusion/algorithm/transformation/insert_range.hpp:
@@ -14650,6 +14856,8 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 /usr/local/include/boost/fusion/view/joint_view/joint_view_fwd.hpp:
 
 /usr/local/include/boost/fusion/view/joint_view/joint_view.hpp:
+
+/usr/local/include/boost/filesystem/convenience.hpp:
 
 /usr/local/include/boost/fusion/sequence/intrinsic/detail/segmented_size.hpp:
 
@@ -14723,6 +14931,8 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 
 /usr/local/include/boost/fusion/support/detail/category_of.hpp:
 
+/usr/include/oneapi/tbb/task_arena.h:
+
 /usr/local/include/boost/fusion/support/category_of.hpp:
 
 /usr/include/x86_64-linux-gnu/c++/5/bits/basic_file.h:
@@ -14755,6 +14965,8 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 
 /usr/local/include/boost/fusion/sequence/intrinsic/detail/segmented_begin_impl.hpp:
 
+/usr/include/oneapi/tbb/blocked_range.h:
+
 /usr/local/include/boost/fusion/support/detail/is_mpl_sequence.hpp:
 
 /usr/local/include/boost/fusion/support/tag_of_fwd.hpp:
@@ -14768,6 +14980,8 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 /usr/local/include/boost/fusion/sequence/intrinsic_fwd.hpp:
 
 /usr/local/include/boost/type_traits/is_empty.hpp:
+
+/usr/local/include/boost/range/detail/str_types.hpp:
 
 /usr/local/include/boost/mpl/empty_base.hpp:
 
@@ -14929,11 +15143,19 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 
 /usr/local/include/boost/math/tools/real_cast.hpp:
 
+/usr/include/c++/5/mutex:
+
 /usr/local/include/boost/mpl/aux_/preprocessor/def_params_tail.hpp:
+
+/usr/local/include/boost/algorithm/string/detail/predicate.hpp:
 
 /usr/local/include/eigen3/Eigen/src/Core/SolveTriangular.h:
 
 /usr/local/include/boost/type_traits/is_lvalue_reference.hpp:
+
+/usr/local/include/boost/io/ios_state.hpp:
+
+/usr/include/tbb/blocked_range.h:
 
 /usr/local/include/boost/preprocessor/seq/enum.hpp:
 
@@ -15049,6 +15271,8 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 
 /usr/include/c++/5/ext/new_allocator.h:
 
+/usr/local/include/boost/algorithm/string/detail/find_format.hpp:
+
 /usr/local/include/boost/fusion/view/filter_view/detail/value_of_data_impl.hpp:
 
 /usr/local/include/boost/mpl/aux_/config/intel.hpp:
@@ -15122,6 +15346,8 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 /usr/local/include/boost/fusion/container/list/detail/equal_to_impl.hpp:
 
 /usr/include/c++/5/map:
+
+/usr/local/include/boost/system/system_error.hpp:
 
 /usr/local/include/boost/detail/iterator.hpp:
 
@@ -15244,6 +15470,8 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 /usr/local/include/eigen3/Eigen/src/Core/ProductEvaluators.h:
 
 /usr/local/include/boost/type_traits/detail/ice_eq.hpp:
+
+/usr/local/include/boost/algorithm/string/detail/classification.hpp:
 
 /usr/local/include/boost/mpl/erase_key_fwd.hpp:
 
@@ -15399,11 +15627,15 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 
 /usr/local/include/eigen3/Eigen/src/Core/ArrayBase.h:
 
+/usr/local/include/boost/algorithm/string/join.hpp:
+
 /usr/local/include/ceres/dynamic_autodiff_cost_function.h:
 
 /usr/local/include/boost/range/detail/has_member_size.hpp:
 
 /usr/local/include/boost/numeric/conversion/detail/preprocessed/numeric_cast_traits_long_long.hpp:
+
+/usr/include/oneapi/tbb/detail/_utils.h:
 
 /usr/include/c++/5/ext/string_conversions.h:
 
@@ -15434,6 +15666,8 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 /usr/local/include/boost/circular_buffer.hpp:
 
 /usr/local/include/boost/mpl/aux_/config/nttp.hpp:
+
+/usr/local/include/boost/algorithm/string/sequence_traits.hpp:
 
 /usr/local/include/eigen3/Eigen/src/Core/products/SelfadjointRank2Update.h:
 
@@ -15527,6 +15761,8 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 
 /usr/local/include/eigen3/Eigen/src/Core/util/Memory.h:
 
+/usr/local/include/boost/algorithm/string/detail/finder.hpp:
+
 /usr/include/unistd.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/5/include/prfchwintrin.h:
@@ -15542,6 +15778,8 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 /usr/local/include/boost/predef/architecture/ppc.h:
 
 /usr/local/include/eigen3/Eigen/src/Core/util/Constants.h:
+
+/usr/local/include/boost/core/scoped_enum.hpp:
 
 /usr/include/c++/5/bits/stl_function.h:
 
@@ -15595,6 +15833,8 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 
 /usr/lib/gcc/x86_64-linux-gnu/5/include/fma4intrin.h:
 
+/usr/include/oneapi/tbb/detail/_range_common.h:
+
 /usr/local/include/boost/type_traits/is_rvalue_reference.hpp:
 
 /usr/include/c++/5/bits/stl_pair.h:
@@ -15618,6 +15858,8 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 /usr/local/include/opencv2/imgproc/imgproc.hpp:
 
 /usr/local/include/boost/preprocessor/control/while.hpp:
+
+/usr/local/include/boost/algorithm/string/classification.hpp:
 
 /usr/local/include/boost/preprocessor/punctuation/comma_if.hpp:
 
@@ -15697,6 +15939,8 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 
 /usr/include/c++/5/typeinfo:
 
+/usr/local/include/boost/filesystem.hpp:
+
 /usr/local/include/boost/preprocessor/logical/bitand.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/sched.h:
@@ -15710,6 +15954,8 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:
 
 /usr/include/x86_64-linux-gnu/bits/locale.h:
+
+/usr/local/include/boost/algorithm/string/detail/find_format_store.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/posix1_lim.h:
 
@@ -15725,6 +15971,8 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 
 /usr/local/include/boost/predef/compiler/diab.h:
 
+/usr/local/include/boost/algorithm/string/detail/trim.hpp:
+
 /usr/local/include/boost/fusion/adapted/mpl.hpp:
 
 /usr/local/include/boost/mpl/aux_/config/ttp.hpp:
@@ -15736,6 +15984,8 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 /usr/include/c++/5/bits/ostream_insert.h:
 
 /usr/local/include/boost/concept/detail/has_constraints.hpp:
+
+/usr/local/include/boost/range/iterator_range.hpp:
 
 /usr/local/include/eigen3/Eigen/src/plugins/BlockMethods.h:
 
@@ -16061,6 +16311,8 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 
 /usr/include/string.h:
 
+/usr/local/include/boost/detail/bitmask.hpp:
+
 /usr/local/include/eigen3/Eigen/src/Core/util/BlasUtil.h:
 
 /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
@@ -16102,6 +16354,8 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 /usr/local/include/boost/fusion/view/zip_view.hpp:
 
 /usr/local/include/boost/preprocessor/repetition/enum.hpp:
+
+/usr/local/include/boost/algorithm/string/std/list_traits.hpp:
 
 /usr/local/include/boost/lexical_cast/detail/lcast_unsigned_converters.hpp:
 
@@ -16377,6 +16631,8 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 
 /usr/include/pthread.h:
 
+/usr/local/include/boost/algorithm/string/std_containers_traits.hpp:
+
 /usr/local/include/boost/predef/os/unix.h:
 
 /usr/local/include/boost/preprocessor/repetition/enum_params.hpp:
@@ -16466,6 +16722,8 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 /usr/include/c++/5/bits/basic_ios.tcc:
 
 /usr/include/c++/5/bits/ostream.tcc:
+
+/usr/local/include/boost/algorithm/string/detail/formatter.hpp:
 
 /usr/local/include/boost/smart_ptr/detail/sp_has_sync.hpp:
 
@@ -16609,6 +16867,8 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 
 /usr/local/include/boost/preprocessor/list/reverse.hpp:
 
+/usr/local/include/boost/algorithm/string/detail/find_iterator.hpp:
+
 /usr/local/include/boost/lexical_cast/detail/converter_lexical_streams.hpp:
 
 /usr/local/include/boost/preprocessor/control/detail/while.hpp:
@@ -16650,6 +16910,8 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 /usr/local/include/boost/math/special_functions/detail/round_fwd.hpp:
 
 /usr/local/include/boost/type_traits/detail/false_result.hpp:
+
+/usr/local/include/boost/io_fwd.hpp:
 
 /usr/local/include/boost/type_traits/make_signed.hpp:
 
@@ -16700,6 +16962,8 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 /usr/local/include/boost/limits.hpp:
 
 /usr/local/include/boost/cstdint.hpp:
+
+/usr/local/include/boost/range/iterator_range_io.hpp:
 
 /usr/include/x86_64-linux-gnu/sys/select.h:
 
@@ -16754,6 +17018,8 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 /usr/local/include/boost/log/core/record.hpp:
 
 /usr/local/include/boost/mpl/size_t_fwd.hpp:
+
+/usr/local/include/boost/system/error_code.hpp:
 
 /usr/local/include/eigen3/Eigen/src/Geometry/ParametrizedLine.h:
 
@@ -16822,6 +17088,8 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 /usr/include/c++/5/tr1/memory:
 
 /usr/local/include/boost/mpl/aux_/preprocessed/gcc/vector.hpp:
+
+/usr/include/tbb/parallel_for.h:
 
 /usr/local/include/boost/type_traits/add_lvalue_reference.hpp:
 
@@ -16939,6 +17207,8 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 
 /usr/local/include/boost/mpl/apply.hpp:
 
+/usr/local/include/boost/algorithm/string/compare.hpp:
+
 /usr/local/include/boost/mpl/apply_fwd.hpp:
 
 /usr/local/include/boost/mpl/logical.hpp:
@@ -17032,6 +17302,8 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 /usr/local/include/boost/type_traits/is_base_and_derived.hpp:
 
 /usr/local/include/boost/range/mutable_iterator.hpp:
+
+/usr/local/include/boost/algorithm/string/case_conv.hpp:
 
 /usr/lib/gcc/x86_64-linux-gnu/5/include/rdseedintrin.h:
 
@@ -17227,6 +17499,8 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 
 /usr/local/include/boost/numeric/conversion/detail/conversion_traits.hpp:
 
+/usr/include/oneapi/tbb/info.h:
+
 /usr/local/include/boost/predef/detail/os_detected.h:
 
 /usr/local/include/boost/mpl/list/aux_/item.hpp:
@@ -17379,6 +17653,8 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 
 /usr/local/include/boost/mpl/list/aux_/include_preprocessed.hpp:
 
+/usr/include/oneapi/tbb/detail/_intrusive_list_node.h:
+
 /usr/local/include/boost/mpl/contains.hpp:
 
 /usr/local/include/eigen3/Eigen/src/Core/TriangularMatrix.h:
@@ -17443,6 +17719,8 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 
 /usr/local/include/boost/mpl/vector/aux_/tag.hpp:
 
+/usr/local/include/boost/algorithm/string/finder.hpp:
+
 /usr/local/include/boost/fusion/view/single_view/detail/size_impl.hpp:
 
 /usr/local/include/boost/mpl/aux_/config/typeof.hpp:
@@ -17487,6 +17765,8 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 
 /usr/local/include/boost/mpl/vector/aux_/include_preprocessed.hpp:
 
+/usr/local/include/boost/algorithm/string.hpp:
+
 ../src/trajectory.h:
 
 /usr/local/include/boost/mpl/vector/aux_/preprocessed/typeof_based/vector20.hpp:
@@ -17501,6 +17781,8 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 
 /usr/local/include/boost/mpl/aux_/preprocessed/gcc/advance_forward.hpp:
 
+/usr/local/include/boost/algorithm/string/split.hpp:
+
 /usr/local/include/boost/mpl/aux_/advance_backward.hpp:
 
 /usr/local/include/boost/parameter/keyword.hpp:
@@ -17514,6 +17796,8 @@ src/CMakeFiles/photobundle.dir/v128.cc.o: ../src/v128.cc \
 /usr/local/include/boost/mpl/comparison.hpp:
 
 /usr/local/include/boost/mpl/aux_/preprocessed/gcc/not_equal_to.hpp:
+
+/usr/local/include/boost/algorithm/string/std/slist_traits.hpp:
 
 /usr/local/include/boost/preprocessor/control/expr_iif.hpp:
 

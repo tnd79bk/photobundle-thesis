@@ -93,7 +93,7 @@ run_kitti_EXTERNAL_OBJECTS =
 bin/run_kitti: apps/CMakeFiles/run_kitti.dir/run_kitti.cc.o
 bin/run_kitti: apps/CMakeFiles/run_kitti.dir/build.make
 bin/run_kitti: bin/libphotobundle.a
-bin/run_kitti: /usr/local/lib/libceres.a
+bin/run_kitti: /usr/lib/x86_64-linux-gnu/libtbb.so
 bin/run_kitti: /usr/local/lib/libopencv_videostab.so.2.4.9
 bin/run_kitti: /usr/local/lib/libopencv_ts.a
 bin/run_kitti: /usr/local/lib/libopencv_superres.so.2.4.9
@@ -116,7 +116,6 @@ bin/run_kitti: /usr/local/lib/libopencv_highgui.so.2.4.9
 bin/run_kitti: /usr/local/lib/libopencv_imgproc.so.2.4.9
 bin/run_kitti: /usr/local/lib/libopencv_flann.so.2.4.9
 bin/run_kitti: /usr/local/lib/libopencv_core.so.2.4.9
-bin/run_kitti: /usr/local/lib/libglog.so
 bin/run_kitti: apps/CMakeFiles/run_kitti.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/duc/Desktop/Photometric/photobundle-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../bin/run_kitti"
 	cd /home/duc/Desktop/Photometric/photobundle-master/build/apps && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/run_kitti.dir/link.txt --verbose=$(VERBOSE)

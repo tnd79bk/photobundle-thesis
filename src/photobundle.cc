@@ -22,6 +22,7 @@
 #include <iterator>
 #include <algorithm>
 #include <map>
+#include <fstream>
 
 // this is just for YCM to stop highlighting openmp as error (there is no openmp
 // in clang3.5)
@@ -497,6 +498,7 @@ addFrame(const uint8_t* I_ptr, const float* Z_ptr, const Mat44& T, Result* resul
   auto frame = DescriptorFrame::Create(_frame_id, I, _options.descriptorType);
 
   auto B = std::max(_options.maskBlockRadius, std::max(2, _options.patchRadius));
+
   auto max_rows = (int) I.rows() - B - 1,
        max_cols = (int) I.cols() - B - 1,
        radius = _options.patchRadius,
@@ -658,7 +660,7 @@ static Vec_<double,6> PoseToParams(const Mat44& T)
 }
 
 static Mat_<double,4,4> ParamsToPose(const double* p)
-{
+{ 
   Mat_<double,3,3> R;
   ceres::AngleAxisToRotationMatrix(p, ceres::ColumnMajorAdapter3x3(R.data()));
 
@@ -719,6 +721,8 @@ class PhotometricBundleAdjustment::DescriptorError
           const T u = u_w + T(x);
           const T i0 = T(_p0[i]);
           const T i1 = SampleWithDerivative(I, Gx, Gy, u, v);
+          // add compare gradient
+          //residuals[i] = _patch_weights[j] *( (i0 - i1) + 0.1 * (  ) + 0.1 * (  ));
           residuals[i] = _patch_weights[j] * (i0 - i1);
         }
       }

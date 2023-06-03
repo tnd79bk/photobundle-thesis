@@ -73,6 +73,21 @@ PoseList convertPoseToLocal(const PoseList& T_w)
   return T_i;
 }
 
+PoseList convertPoseToWorld(const PoseList& T_i)
+{
+  if(T_i.empty())
+    throw std::runtime_error("no poses");
+
+  PoseList T_w(T_i.size());
+  T_w[0] = Eigen::Isometry3d( T_i[0] ).inverse().matrix();
+  for(size_t i = 1; i < T_i.size(); ++i) {
+    T_w[i] = Eigen::Isometry3d(T_i[i] * Eigen::Isometry3d(T_w[i-1]).inverse().matrix() ).inverse().matrix();
+  }
+
+  return T_w;
+}
+
+
 void RunKittiEvaluation(std::string ground_truth_dir, std::string results_dir,
                         std::string output_prefix)
 {
