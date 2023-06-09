@@ -154,30 +154,6 @@ dataset.cc.s:
 	cd /home/duc/Desktop/Photometric/photobundle-master/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/photobundle.dir/build.make src/CMakeFiles/photobundle.dir/dataset.cc.s
 .PHONY : dataset.cc.s
 
-dataset_PBA.o: dataset_PBA.cc.o
-.PHONY : dataset_PBA.o
-
-# target to build an object file
-dataset_PBA.cc.o:
-	cd /home/duc/Desktop/Photometric/photobundle-master/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/photobundle.dir/build.make src/CMakeFiles/photobundle.dir/dataset_PBA.cc.o
-.PHONY : dataset_PBA.cc.o
-
-dataset_PBA.i: dataset_PBA.cc.i
-.PHONY : dataset_PBA.i
-
-# target to preprocess a source file
-dataset_PBA.cc.i:
-	cd /home/duc/Desktop/Photometric/photobundle-master/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/photobundle.dir/build.make src/CMakeFiles/photobundle.dir/dataset_PBA.cc.i
-.PHONY : dataset_PBA.cc.i
-
-dataset_PBA.s: dataset_PBA.cc.s
-.PHONY : dataset_PBA.s
-
-# target to generate assembly for a file
-dataset_PBA.cc.s:
-	cd /home/duc/Desktop/Photometric/photobundle-master/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/photobundle.dir/build.make src/CMakeFiles/photobundle.dir/dataset_PBA.cc.s
-.PHONY : dataset_PBA.cc.s
-
 file_loader.o: file_loader.cc.o
 .PHONY : file_loader.o
 
@@ -454,9 +430,6 @@ help:
 	@echo "... dataset.o"
 	@echo "... dataset.i"
 	@echo "... dataset.s"
-	@echo "... dataset_PBA.o"
-	@echo "... dataset_PBA.i"
-	@echo "... dataset_PBA.s"
 	@echo "... file_loader.o"
 	@echo "... file_loader.i"
 	@echo "... file_loader.s"

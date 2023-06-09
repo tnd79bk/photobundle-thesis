@@ -3,8 +3,6 @@ file(REMOVE_RECURSE
   "../bin/libphotobundle.pdb"
   "CMakeFiles/photobundle.dir/dataset.cc.o"
   "CMakeFiles/photobundle.dir/dataset.cc.o.d"
-  "CMakeFiles/photobundle.dir/dataset_PBA.cc.o"
-  "CMakeFiles/photobundle.dir/dataset_PBA.cc.o.d"
   "CMakeFiles/photobundle.dir/file_loader.cc.o"
   "CMakeFiles/photobundle.dir/file_loader.cc.o.d"
   "CMakeFiles/photobundle.dir/imgproc.cc.o"

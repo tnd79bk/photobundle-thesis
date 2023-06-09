@@ -70,8 +70,6 @@ int main(int argc, char** argv)
   Info("Writing refined poses to %s\n", output_fn.c_str());
   writePosesKittiFormat(output_fn, result.poses);
 
-  //RunKittiEvaluation("a","b","c");
-
   return 0;
 }
 

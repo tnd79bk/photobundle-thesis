@@ -25,6 +25,10 @@ class PhotometricBundleAdjustment
    */
   struct Options
   {
+    /** coefficient of compare gradient*/
+    double alpha;
+
+
     /** maximum number of points to intialize from a new frame */
     int maxNumPoints = 4096;
 
@@ -160,7 +164,7 @@ class PhotometricBundleAdjustment
   void addFrame(const uint8_t* image, const float* depth_map, const Mat44& T, Result* = nullptr);
 
  protected:
-  void optimize(Result*);
+  void optimize(Result*,double alpha);
 
  private:
   struct ScenePoint;

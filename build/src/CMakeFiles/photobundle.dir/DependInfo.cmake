@@ -9,7 +9,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/duc/Desktop/Photometric/photobundle-master/src/dataset.cc" "src/CMakeFiles/photobundle.dir/dataset.cc.o" "gcc" "src/CMakeFiles/photobundle.dir/dataset.cc.o.d"
-  "/home/duc/Desktop/Photometric/photobundle-master/src/dataset_PBA.cc" "src/CMakeFiles/photobundle.dir/dataset_PBA.cc.o" "gcc" "src/CMakeFiles/photobundle.dir/dataset_PBA.cc.o.d"
   "/home/duc/Desktop/Photometric/photobundle-master/src/file_loader.cc" "src/CMakeFiles/photobundle.dir/file_loader.cc.o" "gcc" "src/CMakeFiles/photobundle.dir/file_loader.cc.o.d"
   "/home/duc/Desktop/Photometric/photobundle-master/src/imgproc.cc" "src/CMakeFiles/photobundle.dir/imgproc.cc.o" "gcc" "src/CMakeFiles/photobundle.dir/imgproc.cc.o.d"
   "/home/duc/Desktop/Photometric/photobundle-master/src/photobundle.cc" "src/CMakeFiles/photobundle.dir/photobundle.cc.o" "gcc" "src/CMakeFiles/photobundle.dir/photobundle.cc.o.d"

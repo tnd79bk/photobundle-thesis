@@ -29,7 +29,7 @@
 // Author: keir@google.com (Keir Mierle)
 //
 
-// modified slightly hy halismai to eliminate some warnings
+// modified slightly by halismai to eliminate some warnings
 #ifndef CERES_PUBLIC_JET_EXTRAS_H_
 #define CERES_PUBLIC_JET_EXTRAS_H_
 

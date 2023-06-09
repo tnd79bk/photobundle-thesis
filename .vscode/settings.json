@@ -82,6 +82,7 @@
         "span": "cpp",
         "dynamic_bitset": "cpp",
         "matrixfunctions": "cpp",
-        "polynomials": "cpp"
+        "polynomials": "cpp",
+        "shared_mutex": "cpp"
     }
 }
