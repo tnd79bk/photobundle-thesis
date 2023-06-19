@@ -7,7 +7,6 @@
 #include "photobundle.h"
 #include "sample_eigen.h"
 #include "utils.h"
-#include <tuple>
 
 #if defined(WITH_CEREAL)
 #include "ceres_cereal.h"
@@ -24,6 +23,10 @@
 #include <algorithm>
 #include <map>
 #include <fstream>
+#include <iostream>
+
+// #include <ceres/ceres.h>
+// #include "jet_extras.h"
 
 // this is just for YCM to stop highlighting openmp as error (there is no openmp
 // in clang3.5)
@@ -103,7 +106,7 @@ PhotometricBundleAdjustment::Options::Options(const utils::ConfigFile& cf)
     maxValidDepth(cf.get<double>("maxValidDepth", 1000.0)),
     nonMaxSuppRadius(cf.get<int>("nonMaxSuppRadius", 1)),
     descriptorType(DescriptorTypeFromString(cf.get<std::string>("descriptorType", "Intensity")))
-    //descriptorType(DescriptorTypeFromString(cf.get<std::string>("descriptorType", "IntensityAndGradient")))
+   // descriptorType(DescriptorTypeFromString(cf.get<std::string>("descriptorType", "IntensityAndGradient")))
 {}
 
 /**
@@ -498,23 +501,6 @@ void ExtractPatch(T* dst, const Image& I, const Vec_<int,2>& uv, int radius)
   }
 }
 
-template <typename T, class ImageT> static inline
-void ExtractPatchG(T* dst, const ImageT& I, const Vec_<int,2>& uv, int radius)
-{
-  int max_cols = I.cols() - radius - 1,
-      max_rows = I.rows() - radius - 1;
-
-  for(int r = -radius, i=0; r <= radius; ++r) {
-    int r_i = std::max(radius, std::min(uv[1] + r, max_rows));
-    for(int c = -radius; c <= radius; ++c, ++i) {
-      int c_i = std::max(radius, std::min(uv[0] + c, max_cols));
-      dst[i] = static_cast<T>( I(r_i, c_i) );
-    }
-  }
-}
-
-
-
 void PhotometricBundleAdjustment::
 addFrame(const uint8_t* I_ptr, const float* Z_ptr, const Mat44& T, Result* result)
 {
@@ -640,9 +626,6 @@ addFrame(const uint8_t* I_ptr, const float* Z_ptr, const Mat44& T, Result* resul
     const auto& channelGx = channelG.Ix();
     const auto& channelGy = channelG.Iy();
 
-
-
-
     for(int i = 0; i < num_new_points; ++i) {
       auto ptr = new_scene_points[i]->descriptor().data() + k*patch_length;
       ExtractPatch(ptr, channel, new_scene_points[i]->getFirstProjection(), radius);
@@ -746,7 +729,8 @@ class PhotometricBundleAdjustment::DescriptorError
                                      const std::vector<double>& Gy0,
                                      const DescriptorFrame* f,
                                      const std::vector<double>& w,
-                                     const double& alpha)
+                                     const double& alpha
+                                     )                                 
   {
     return new ceres::AutoDiffCostFunction<DescriptorError, ceres::DYNAMIC, 6, 3>(
         new DescriptorError(calib, p0, Gx0 , Gy0 ,f, w, alpha), p0.size());
@@ -765,21 +749,24 @@ class PhotometricBundleAdjustment::DescriptorError
     _calib.project(xw, u_w, v_w);
 
     for(size_t k = 0, i=0; k < _frame->numChannels(); ++k) {
+      // add compute gradient of reference frame p0
       const auto& I = _frame->getChannel(k);
       const auto& G = _frame->getChannelGradient(k);
       const auto& Gx = G.Ix();
       const auto& Gy = G.Iy();
-
-      // add compute gradient of reference frame p0
-      // imgradient(I.data(), ImageSize(I.rows(), I.cols()), _Ix.data(), _Iy.data());
+      //const std::vector<double> image1 = pt->descriptor();
+      //result->intensity1 = I;
+      // std::vector<T> _result.intensity1;
+      // std::vector<T> _result.gx1;
+      // std::vector<T> _result.gy1;
 
       for(int y = -_radius, j = 0; y <= _radius; ++y) {
         const T v = v_w + T(y);
         for(int x = -_radius; x <= _radius; ++x, ++i, ++j) {
           const T u = u_w + T(x);
           const T i0 = T(_p0[i]);
-          const T Gxi = T(_Gx0[i]);
-          const T Gyi = T(_Gy0[i]);
+          const T Gx0 = T(_Gx0[i]);
+          const T Gy0 = T(_Gy0[i]);
 
           //const T i[3]= SampleWithDerivativeGx(I, Gx, Gy, u, v);
           //const T i1 = i[0] , Gx1 = i[1] , Gy1 = i[2];
@@ -787,12 +774,22 @@ class PhotometricBundleAdjustment::DescriptorError
           const T i1 = SampleWithDerivative(I, Gx, Gy, u, v);
           const T Gx1 = SampleWithDerivativeGx(I, Gx, Gy, u, v);
           const T Gy1 = SampleWithDerivativeGy(I, Gx, Gy, u, v);
+          // _result->intensity1[i]= i1;
+          // _result->gx1[i] = Gx1;
+          // _result->gy1[i] = Gy1;
+          // _p1[i] = (i1);
+          // _Gx1[i] = (Gx1);
+          // _Gy1[i] = (Gy1);
+          
           // add compare gradient
           //residuals[i] = _patch_weights[j] * (i0 - i1);
-          residuals[i] = _patch_weights[j] * (i0 - i1 + _alpha*(Gxi-Gx1) + _alpha*(Gyi-Gy1));
+          residuals[i] = _patch_weights[j] * ((i0 - i1) + _alpha*(Gx0-Gx1) + _alpha*(Gy0-Gy1));
           //residuals[i] = _patch_weights[j] * (i0 - i1 + 0.1*(Gxi-Gx1) + 0.1*(Gyi-Gy1));
         }
       }
+      // _result->intensity1 = std::vector<ceres::Jet<double, 9> >(_p1);
+      // _result->gx1 = std::vector<ceres::Jet<double, 9> >(_Gx1);
+      // _result->gy1 = std::vector<ceres::Jet<double, 9> >(_Gy1);
     }
 
     // maybe we should return false if the point goes out of the image!
@@ -809,6 +806,10 @@ class PhotometricBundleAdjustment::DescriptorError
   const DescriptorFrame* _frame;
   const double* const _patch_weights;
   const double _alpha;
+  //Result* _result;
+  // const double* const _p1;
+  // const double* const _Gx1;
+  // const double* const _Gy1;
 }; // DescriptorError
 
 static inline ceres::Solver::Options
@@ -859,6 +860,8 @@ void PhotometricBundleAdjustment::optimize(Result* result,double alpha)
   //
   ceres::Problem problem;
   int num_selected_points = 0;
+
+
   for(auto& pt : _scene_points) {
     // it is enough to check the visibility list length, because we will remove
     // points as soon as they leave the optimization window
@@ -874,10 +877,21 @@ void PhotometricBundleAdjustment::optimize(Result* result,double alpha)
           auto* loss = huber_t > 0.0 ? new ceres::HuberLoss(huber_t) : nullptr;
 
           ceres::CostFunction* cost = nullptr;
-          // Math i;
+
+          // std::vector<double> _intensity1;
+          // std::vector<double> _gx1;
+          // std::vector<double> _gy1;
           //cost = DescriptorError::Create(_calib, pt->descriptor(), getFrameAtId(id), patch_weights);
           cost = DescriptorError::Create(_calib, pt->descriptor(),pt->descriptorGx(),pt->descriptorGy(),getFrameAtId(id), patch_weights,alpha);
           problem.AddResidualBlock(cost, loss, camera_ptr, xyz);
+
+          // result->intensity0 = pt->descriptor();
+          // result->gx0 = pt->descriptorGx();
+          // result->gy0 = pt->descriptorGy();
+          // result->intensity1 = cost->_intensity1;
+          // DescriptorError. 
+          // result->gx1 = _gx1;
+          // result->gy1 = _gy1;
         }
       }
     }
@@ -933,6 +947,9 @@ void PhotometricBundleAdjustment::optimize(Result* result,double alpha)
   // check if we should return a result to the user
   //
   if(result) {
+
+
+
     result->poses = _trajectory.poses();
     const auto npts = points_to_remove.size();
     result->refinedPoints.resize(npts);

@@ -12,6 +12,11 @@
 #include <boost/circular_buffer.hpp>
 
 
+
+#include <ceres/ceres.h>
+#include "jet_extras.h"
+
+
 namespace utils {
 class ConfigFile;
 };  // utils
@@ -27,7 +32,6 @@ class PhotometricBundleAdjustment
   {
     /** coefficient of compare gradient*/
     double alpha;
-
 
     /** maximum number of points to intialize from a new frame */
     int maxNumPoints = 4096;
@@ -88,9 +92,25 @@ class PhotometricBundleAdjustment
     friend std::ostream& operator<<(std::ostream&, const Options&);
   }; //  Options
 
-
   struct Result
-  {
+  { 
+    /* Intensity of path 0*/
+    // std::vector<double> intensity0;
+    // /* gx of path 0*/
+    // std::vector<double> gx0;
+    // /* gy of path 0*/
+    // std::vector<double> gy0;
+
+    // /* Intensity of path 1*/
+    // std::vector<ceres::Jet<double, 9>> intensity1;
+    // //std::vector<double> intensity1;
+    // /* gx of path 1*/
+    // std::vector<ceres::Jet<double, 9>> gx1;
+    // //std::vector<double> gx1;
+    // /* gy of path 1*/
+    // std::vector<ceres::Jet<double, 9>> gy1;
+    //std::vector<double> gy1;
+
     /** refined world poses */
     EigenAlignedContainer_<Mat44> poses;
 

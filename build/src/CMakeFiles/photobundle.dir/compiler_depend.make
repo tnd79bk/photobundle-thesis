@@ -4532,8 +4532,8 @@ src/CMakeFiles/photobundle.dir/photobundle.cc.o: ../src/photobundle.cc \
   /usr/include/c++/5/bits/stl_deque.h \
   /usr/include/c++/5/bits/deque.tcc \
   /usr/local/include/boost/circular_buffer/space_optimized.hpp \
-  ../src/sample_eigen.h \
   ../src/jet_extras.h \
+  ../src/sample_eigen.h \
   ../src/utils.h \
   /usr/local/include/boost/program_options.hpp \
   /usr/local/include/boost/program_options/options_description.hpp \
@@ -6212,19 +6212,117 @@ src/CMakeFiles/photobundle.dir/photobundle_pyramid.cc.o: ../src/photobundle_pyra
   /usr/include/c++/5/bits/stl_deque.h \
   /usr/include/c++/5/bits/deque.tcc \
   /usr/local/include/boost/circular_buffer/space_optimized.hpp \
-  ../src/debug.h \
-  /usr/local/include/opencv2/imgproc/imgproc.hpp \
-  /usr/local/include/opencv2/imgproc/types_c.h \
-  /usr/local/include/opencv2/core/core_c.h \
-  /usr/local/include/eigen3/Eigen/LU \
+  /usr/local/include/ceres/ceres.h \
+  /usr/local/include/ceres/autodiff_cost_function.h \
+  /usr/local/include/ceres/internal/autodiff.h \
+  /usr/local/include/ceres/jet.h \
+  /usr/include/c++/5/iostream \
+  /usr/local/include/ceres/fpclassify.h \
+  /usr/local/include/ceres/internal/eigen.h \
+  /usr/local/include/ceres/internal/fixed_array.h \
+  /usr/local/include/ceres/internal/macros.h \
+  /usr/local/include/ceres/internal/manual_constructor.h \
+  /usr/local/include/glog/logging.h \
+  /usr/include/inttypes.h \
+  /usr/local/include/glog/log_severity.h \
+  /usr/local/include/glog/vlog_is_on.h \
+  /usr/local/include/ceres/internal/variadic_evaluate.h \
+  /usr/local/include/ceres/internal/scoped_ptr.h \
+  /usr/local/include/ceres/sized_cost_function.h \
+  /usr/local/include/ceres/cost_function.h \
+  /usr/local/include/ceres/autodiff_local_parameterization.h \
+  /usr/local/include/ceres/local_parameterization.h \
+  /usr/local/include/ceres/cost_function_to_functor.h \
+  /usr/local/include/ceres/dynamic_cost_function_to_functor.h \
+  /usr/local/include/ceres/covariance.h \
+  /usr/local/include/ceres/crs_matrix.h \
+  /usr/local/include/ceres/dynamic_autodiff_cost_function.h \
+  /usr/local/include/ceres/dynamic_numeric_diff_cost_function.h \
+  /usr/local/include/ceres/internal/numeric_diff.h \
+  /usr/local/include/eigen3/Eigen/Dense \
   /usr/local/include/eigen3/Eigen/Core \
+  /usr/local/include/eigen3/Eigen/LU \
   /usr/local/include/eigen3/Eigen/src/misc/Kernel.h \
   /usr/local/include/eigen3/Eigen/src/misc/Image.h \
   /usr/local/include/eigen3/Eigen/src/LU/FullPivLU.h \
   /usr/local/include/eigen3/Eigen/src/LU/PartialPivLU.h \
   /usr/local/include/eigen3/Eigen/src/LU/Determinant.h \
   /usr/local/include/eigen3/Eigen/src/LU/InverseImpl.h \
-  /usr/local/include/eigen3/Eigen/src/LU/arch/Inverse_SSE.h
+  /usr/local/include/eigen3/Eigen/src/LU/arch/Inverse_SSE.h \
+  /usr/local/include/eigen3/Eigen/Cholesky \
+  /usr/local/include/eigen3/Eigen/src/Cholesky/LLT.h \
+  /usr/local/include/eigen3/Eigen/src/Cholesky/LDLT.h \
+  /usr/local/include/eigen3/Eigen/QR \
+  /usr/local/include/eigen3/Eigen/Jacobi \
+  /usr/local/include/eigen3/Eigen/src/Jacobi/Jacobi.h \
+  /usr/local/include/eigen3/Eigen/Householder \
+  /usr/local/include/eigen3/Eigen/src/Householder/Householder.h \
+  /usr/local/include/eigen3/Eigen/src/Householder/HouseholderSequence.h \
+  /usr/local/include/eigen3/Eigen/src/Householder/BlockHouseholder.h \
+  /usr/local/include/eigen3/Eigen/src/QR/HouseholderQR.h \
+  /usr/local/include/eigen3/Eigen/src/QR/FullPivHouseholderQR.h \
+  /usr/local/include/eigen3/Eigen/src/QR/ColPivHouseholderQR.h \
+  /usr/local/include/eigen3/Eigen/src/QR/CompleteOrthogonalDecomposition.h \
+  /usr/local/include/eigen3/Eigen/SVD \
+  /usr/local/include/eigen3/Eigen/src/misc/RealSvd2x2.h \
+  /usr/local/include/eigen3/Eigen/src/SVD/UpperBidiagonalization.h \
+  /usr/local/include/eigen3/Eigen/src/SVD/SVDBase.h \
+  /usr/local/include/eigen3/Eigen/src/SVD/JacobiSVD.h \
+  /usr/local/include/eigen3/Eigen/src/SVD/BDCSVD.h \
+  /usr/local/include/eigen3/Eigen/Geometry \
+  /usr/local/include/eigen3/Eigen/src/Geometry/OrthoMethods.h \
+  /usr/local/include/eigen3/Eigen/src/Geometry/EulerAngles.h \
+  /usr/local/include/eigen3/Eigen/src/Geometry/Homogeneous.h \
+  /usr/local/include/eigen3/Eigen/src/Geometry/RotationBase.h \
+  /usr/local/include/eigen3/Eigen/src/Geometry/Rotation2D.h \
+  /usr/local/include/eigen3/Eigen/src/Geometry/Quaternion.h \
+  /usr/local/include/eigen3/Eigen/src/Geometry/AngleAxis.h \
+  /usr/local/include/eigen3/Eigen/src/Geometry/Transform.h \
+  /usr/local/include/eigen3/Eigen/src/Geometry/Translation.h \
+  /usr/local/include/eigen3/Eigen/src/Geometry/Scaling.h \
+  /usr/local/include/eigen3/Eigen/src/Geometry/Hyperplane.h \
+  /usr/local/include/eigen3/Eigen/src/Geometry/ParametrizedLine.h \
+  /usr/local/include/eigen3/Eigen/src/Geometry/AlignedBox.h \
+  /usr/local/include/eigen3/Eigen/src/Geometry/Umeyama.h \
+  /usr/local/include/eigen3/Eigen/src/Geometry/arch/Geometry_SSE.h \
+  /usr/local/include/eigen3/Eigen/Eigenvalues \
+  /usr/local/include/eigen3/Eigen/src/Eigenvalues/Tridiagonalization.h \
+  /usr/local/include/eigen3/Eigen/src/Eigenvalues/RealSchur.h \
+  /usr/local/include/eigen3/Eigen/src/Eigenvalues/HessenbergDecomposition.h \
+  /usr/local/include/eigen3/Eigen/src/Eigenvalues/EigenSolver.h \
+  /usr/local/include/eigen3/Eigen/src/Eigenvalues/RealSchur.h \
+  /usr/local/include/eigen3/Eigen/src/Eigenvalues/SelfAdjointEigenSolver.h \
+  /usr/local/include/eigen3/Eigen/src/Eigenvalues/Tridiagonalization.h \
+  /usr/local/include/eigen3/Eigen/src/Eigenvalues/GeneralizedSelfAdjointEigenSolver.h \
+  /usr/local/include/eigen3/Eigen/src/Eigenvalues/HessenbergDecomposition.h \
+  /usr/local/include/eigen3/Eigen/src/Eigenvalues/ComplexSchur.h \
+  /usr/local/include/eigen3/Eigen/src/Eigenvalues/ComplexEigenSolver.h \
+  /usr/local/include/eigen3/Eigen/src/Eigenvalues/ComplexSchur.h \
+  /usr/local/include/eigen3/Eigen/src/Eigenvalues/RealQZ.h \
+  /usr/local/include/eigen3/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h \
+  /usr/local/include/eigen3/Eigen/src/Eigenvalues/RealQZ.h \
+  /usr/local/include/eigen3/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
+  /usr/local/include/eigen3/Eigen/StdVector \
+  /usr/local/include/eigen3/Eigen/src/StlSupport/StdVector.h \
+  /usr/local/include/eigen3/Eigen/src/StlSupport/details.h \
+  /usr/local/include/ceres/numeric_diff_options.h \
+  /usr/local/include/ceres/gradient_problem.h \
+  /usr/local/include/ceres/gradient_problem_solver.h \
+  /usr/local/include/ceres/loss_function.h \
+  /usr/local/include/ceres/numeric_diff_cost_function.h \
+  /usr/local/include/ceres/ordered_groups.h \
+  /usr/include/c++/5/set \
+  /usr/include/c++/5/bits/stl_set.h \
+  /usr/include/c++/5/bits/stl_multiset.h \
+  /usr/local/include/ceres/problem.h \
+  /usr/local/include/ceres/solver.h \
+  /usr/local/include/ceres/version.h \
+  ../src/jet_extras.h \
+  ../src/debug.h \
+  /usr/local/include/opencv2/imgproc/imgproc.hpp \
+  /usr/local/include/opencv2/imgproc/types_c.h \
+  /usr/local/include/opencv2/core/core_c.h \
+  /usr/local/include/eigen3/Eigen/LU
 
 src/CMakeFiles/photobundle.dir/pose_utils.cc.o: ../src/pose_utils.cc \
   /usr/include/stdc-predef.h \

@@ -29,7 +29,6 @@
 
 #include <ceres/ceres.h>
 #include "jet_extras.h"
-#include <tuple>
 
 template< typename TPixel >
 void LinearInitAxis( TPixel x, int size,
@@ -125,6 +124,7 @@ T SampleWithDerivative(const TImage & intensityImage,
   T xy[2] = { x, y };
 
   return ceres::Chain< PixelType, 2, T >::Rule( sample[0], sample + 1, xy );
+  //return sample[0];
 }
 
 template< typename T, class TImage, class TImage2 >
@@ -157,6 +157,7 @@ T SampleWithDerivativeGx(const TImage & intensityImage,
   // Gy = ceres::Chain< PixelType, 2, T >::Rule( sample[2], sample + 1, xy );
 
   return ceres::Chain< PixelType, 2, T >::Rule( sample[1], sample + 1, xy );
+  //return sample[1];
 }
 
 template< typename T, class TImage, class TImage2 >
@@ -179,6 +180,7 @@ T SampleWithDerivativeGy(const TImage & intensityImage,
   T xy[2] = { x, y };
 
   return ceres::Chain< PixelType, 2, T >::Rule( sample[2], sample + 1, xy );
+  //return sample[2];
 }
 
 #endif //

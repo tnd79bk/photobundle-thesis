@@ -15,23 +15,23 @@
 
 int main(int argc, char** argv)
 {
-    auto origin_poses_global = loadPosesKittiFormat("/home/duc/Desktop/Photometric/data/data_odometry_poses/dataset/poses/00.txt");
+    auto gt_poses_global = loadPosesKittiFormat("/home/duc/Desktop/Photometric/data/data_odometry_poses/dataset/poses/00.txt");
 
     auto init_poses = loadPosesKittiFormat("/home/duc/Desktop/Photometric/photobundle-master/data/kitti_init_poor/00.txt");
     auto init_poses_global = convertPoseToWorld(init_poses);
     
-    auto refined_poses_global = loadPosesKittiFormat("/home/duc/Desktop/Photometric/photobundle-master/apps/refined_poses_cache_1200f.txt");
-    auto refined_poses_global_origin = loadPosesKittiFormat("/home/duc/Desktop/Photometric/photobundle-master/apps/refined_pose_origin.txt");
+    auto refined_poses_global = loadPosesKittiFormat("/home/duc/Desktop/Photometric/photobundle-master/apps/refined_poses_new_00_0.1_r1.txt");
+    auto refined_poses_global_origin = loadPosesKittiFormat("/home/duc/Desktop/Photometric/photobundle-master/apps/refined_poses_origin_00_r1.txt");
 
-    auto pose = refined_poses_global;
+    auto pose = gt_poses_global;
 
 
-    std::ofstream ofs("xyz-refined-1200.txt");
+    std::ofstream ofs("xyz-gt-00.txt");
 
 
     for(size_t i = 0; i < pose.size(); ++i) {
 
-        ofs << pose[i](0,3) << " " << pose[i](1,3) << " " << pose[i](2,3) << "\n";
+        ofs << pose[i](0,3) << "\t" << pose[i](1,3) << "\t" << pose[i](2,3) << "\n";
 
     }
     printf("frame : %d \n", pose.size()) ;
