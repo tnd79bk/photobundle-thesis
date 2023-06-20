@@ -153,7 +153,7 @@ int main(int argc, char** argv)
 
   utils::ProgramOptions options;
   options
-      ("output,o", "refined_poses_new_s0_02_r2.txt", "trajectory output file")
+      ("output,o", "refined_poses_new_00_01_r2.txt", "trajectory output file")
       ("config,c", "../config/kitti_stereo.cfg", "config file")
       .parse(argc, argv);
 

@@ -20,13 +20,13 @@ int main(int argc, char** argv)
     auto init_poses = loadPosesKittiFormat("/home/duc/Desktop/Photometric/photobundle-master/data/kitti_init_poor/00.txt");
     auto init_poses_global = convertPoseToWorld(init_poses);
     
-    auto refined_poses_global = loadPosesKittiFormat("/home/duc/Desktop/Photometric/photobundle-master/apps/refined_poses_new_00_0.1_r1.txt");
+    auto refined_poses_global = loadPosesKittiFormat("/home/duc/Desktop/Photometric/photobundle-master/apps/refined_poses_new_00_0.2_r1.txt");
     auto refined_poses_global_origin = loadPosesKittiFormat("/home/duc/Desktop/Photometric/photobundle-master/apps/refined_poses_origin_00_r1.txt");
 
     auto pose = gt_poses_global;
 
 
-    std::ofstream ofs("xyz-gt-00.txt");
+    std::ofstream ofs("xyz-new-00-0.2-r1.txt");
 
 
     for(size_t i = 0; i < pose.size(); ++i) {
