@@ -58,6 +58,20 @@ bool writePosesKittiFormat(std::string fn, const PoseList& T)
   return true;
 }
 
+// bool writeRefinedPoints(std::string fn, EigenAlignedContainer_<Vec3> refinedPoints)
+// {
+//   std::ofstream ofs(fn);
+//   if(!ofs.is_open())
+//     return false;
+
+//   for(size_t i = 0; i < refinedPoints.size(); ++i) {
+//     ofs << refinedPoints[i] << "\n";
+//     //ofs << "\n";
+//   }
+
+//   return true;
+// }
+
 
 PoseList convertPoseToLocal(const PoseList& T_w)
 {
@@ -85,26 +99,4 @@ PoseList convertPoseToWorld(const PoseList& T_i)
   }
 
   return T_w;
-}
-
-
-void RunKittiEvaluation(std::string ground_truth_dir, std::string results_dir,
-                        std::string output_prefix)
-{
-    auto origin_poses = loadPosesKittiFormat(ground_truth_dir + "00.txt");
-
-    auto refined_poses = loadPosesKittiFormat(results_dir+ "refined_poses-111.txt");
-
-    std::ofstream ofs("error.txt");
-
-    for(size_t i = 0; i < refined_poses.size(); ++i) {
-        auto err_square = 0;
-        for(int r = 0; r < 3; ++r) {
-            for(int c = 0; c < 4; ++c) {
-             err_square += refined_poses[i](r,c)*refined_poses[i](r,c) - origin_poses[i](r,c)*origin_poses[i](r,c);
-            }
-        }
-        ofs << (sqrt(err_square)) << " ";
-        ofs << "\n";
-    }
 }

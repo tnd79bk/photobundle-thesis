@@ -17,6 +17,11 @@ PoseList loadPosesKittiFormat(std::string);
 bool writePosesKittiFormat(std::string, const PoseList&);
 
 /**
+ * \return refined points
+ */
+// bool writeRefinedPoints(std::string, EigenAlignedContainer_<Vec3>);
+
+/**
  * \param input poses in 'global' coordinate system. i.e. if you plot the camera
  * centers (the translfation part of each pose) you will get the camera
  * trajectory

@@ -644,7 +644,7 @@ addFrame(const uint8_t* I_ptr, const float* Z_ptr, const Mat44& T, Result* resul
   _frame_buffer.push_back(DescriptorFramePointer(frame));
 
   if(_frame_buffer.full()) {
-    optimize(result,_options.alpha);
+    optimize(result,_options.alpha,_frame_id);
   }
 
   ++_frame_id;
@@ -838,7 +838,7 @@ GetSolverOptions(int num_threads, bool verbose = false, double tol = 1e-6)
 }
 
 
-void PhotometricBundleAdjustment::optimize(Result* result,double alpha)
+void PhotometricBundleAdjustment::optimize(Result* result,double alpha,int _frame_id)
 {
   auto frame_id_start = _frame_buffer.front()->id(),
        frame_id_end   = _frame_buffer.back()->id();
@@ -878,20 +878,10 @@ void PhotometricBundleAdjustment::optimize(Result* result,double alpha)
 
           ceres::CostFunction* cost = nullptr;
 
-          // std::vector<double> _intensity1;
-          // std::vector<double> _gx1;
-          // std::vector<double> _gy1;
-          //cost = DescriptorError::Create(_calib, pt->descriptor(), getFrameAtId(id), patch_weights);
           cost = DescriptorError::Create(_calib, pt->descriptor(),pt->descriptorGx(),pt->descriptorGy(),getFrameAtId(id), patch_weights,alpha);
           problem.AddResidualBlock(cost, loss, camera_ptr, xyz);
 
-          // result->intensity0 = pt->descriptor();
-          // result->gx0 = pt->descriptorGx();
-          // result->gy0 = pt->descriptorGy();
-          // result->intensity1 = cost->_intensity1;
-          // DescriptorError. 
-          // result->gx1 = _gx1;
-          // result->gy1 = _gy1;
+
         }
       }
     }
@@ -942,6 +932,7 @@ void PhotometricBundleAdjustment::optimize(Result* result,double alpha)
   //
   auto points_to_remove = removePointsAtFrame(frame_id_start);
   printf("removing %zu old points\n", points_to_remove.size());
+  //printf("Frame id : %d\n",_frame_id);
 
   //
   // check if we should return a result to the user
@@ -951,13 +942,30 @@ void PhotometricBundleAdjustment::optimize(Result* result,double alpha)
 
 
     result->poses = _trajectory.poses();
+
+    //const auto npts = points_to_remove.size() + refinedPoints.size();
+    //auto size_i = result->refinedPoints.size();
     const auto npts = points_to_remove.size();
-    result->refinedPoints.resize(npts);
-    result->originalPoints.resize(npts);
+    result->refinedPoints.resize(npts + 4096 * (_frame_id-4));
+    result->originalPoints.resize(npts + 4096 * (_frame_id-4));
+
+    std::ofstream f("refined_points_new_00_03_r2.txt", std::ios::app);
+    //f.open("refined_points_origin_test.txt",ios::out | ios::app);
     for(size_t i = 0; i < npts; ++i) {
-      result->refinedPoints[i] = points_to_remove[i]->X();
-      result->originalPoints[i] = points_to_remove[i]->getOriginalPoint();
+      f<< points_to_remove[i]->X();
+      f<<"\n";
     }
+    f.close();
+
+
+    //const auto npts = points_to_remove.size();
+    
+    // result->refinedPoints.resize(npts + 4096 * (_frame_id-4));
+    // result->originalPoints.resize(npts + 4096 * (_frame_id-4));
+    //for(size_t i = 0; i < npts; ++i) {
+      //result->refinedPoints[i + 4096 * (_frame_id-4)] = points_to_remove[i]->X();
+      //result->originalPoints[i + 4096 * (_frame_id-4)] = points_to_remove[i]->getOriginalPoint();
+    //}
 
     result->initialCost = summary.initial_cost;
     result->finalCost   = summary.final_cost;

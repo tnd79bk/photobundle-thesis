@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/g++
 CXX_DEFINES = -DWITH_OPENCV -DWITH_OPENMP -DWITH_TBB
 
-CXX_INCLUDES = -I/home/duc/Desktop/Photometric/lib/ceres-solver/ceres-solver-1.11.0/build/config -I/usr/local/include/eigen3 -I/home/duc/Desktop/Photometric/photobundle-master/src -I/usr/local/include/opencv -I/home/duc/Desktop/Photometric/photobundle-master/lib/boost/boost_1_59_0/boost
+CXX_INCLUDES = -I/home/duc/Desktop/Photometric/photobundle-master/../lib/ceres-solver/ceres-solver-1.11.0/build/config -I/usr/local/include/eigen3 -I/home/duc/Desktop/Photometric/photobundle-master/src -I/usr/local/include/opencv -I/home/duc/Desktop/Photometric/photobundle-master/../lib/boost/boost_1_59_0/boost
 
 CXX_FLAGS =  -std=c++11 -Wall -Wextra -Wparentheses -fomit-frame-pointer -funroll-loops -fpeel-loops -mtune=native -msse2 -mssse3 -msse4.1 -mpopcnt -fPIC -fopenmp
 

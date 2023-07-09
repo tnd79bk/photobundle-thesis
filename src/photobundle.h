@@ -94,22 +94,6 @@ class PhotometricBundleAdjustment
 
   struct Result
   { 
-    /* Intensity of path 0*/
-    // std::vector<double> intensity0;
-    // /* gx of path 0*/
-    // std::vector<double> gx0;
-    // /* gy of path 0*/
-    // std::vector<double> gy0;
-
-    // /* Intensity of path 1*/
-    // std::vector<ceres::Jet<double, 9>> intensity1;
-    // //std::vector<double> intensity1;
-    // /* gx of path 1*/
-    // std::vector<ceres::Jet<double, 9>> gx1;
-    // //std::vector<double> gx1;
-    // /* gy of path 1*/
-    // std::vector<ceres::Jet<double, 9>> gy1;
-    //std::vector<double> gy1;
 
     /** refined world poses */
     EigenAlignedContainer_<Mat44> poses;
@@ -184,7 +168,7 @@ class PhotometricBundleAdjustment
   void addFrame(const uint8_t* image, const float* depth_map, const Mat44& T, Result* = nullptr);
 
  protected:
-  void optimize(Result*,double alpha);
+  void optimize(Result*,double alpha,int _frame_id);
 
  private:
   struct ScenePoint;

@@ -39,7 +39,7 @@ endif()
 #Cai nay set cai thu muc Ceres ma khong can phai find_package(Ceres)
 #set(Ceres_INCLUDE_DIRS /home/duc/Desktop/Photometric/photobundle-master/ceres-solver/ceres-solver-1.11.0/build/config)
 #find_package(Ceres REQUIRED )
-set(Ceres_INCLUDE_DIRS /home/duc/Desktop/Photometric/lib/ceres-solver/ceres-solver-1.11.0/build/config)
+set(Ceres_INCLUDE_DIRS ../lib/ceres-solver/ceres-solver-1.11.0/build/config)
 include_directories(${Ceres_INCLUDE_DIRS})
 
 list(APPEND MY_LIBRARIES ${CERES_LIBRARIES})
@@ -86,7 +86,7 @@ set(Boost_USE_STATIC_RUNTIME ON)
 # list(APPEND MY_LIBRARIES ${Boost_LIBRARIES})
 
 #Tao duong dan den boost
-set(Boost_INCLUDE_DIRS /home/duc/Desktop/Photometric/photobundle-master/lib/boost/boost_1_59_0/boost)
+set(Boost_INCLUDE_DIRS ../lib/boost/boost_1_59_0/boost)
 #find_package(Boost REQUIRED )
 include_directories(${Boost_INCLUDE_DIRS})
 

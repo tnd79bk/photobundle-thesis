@@ -20,16 +20,9 @@ int main(int argc, char** argv)
     auto init_poses = loadPosesKittiFormat("/home/duc/Desktop/Photometric/photobundle-master/data/kitti_init_poor/00.txt");
     auto init_poses_global = convertPoseToWorld(init_poses);
     
-    // for(size_t i = 0; i < init_poses.size(); ++i) {  
-    //     for(int r = 0; r < 3; ++r) {
-    //     for(int c = 0; c < 4; ++c) {
-    //         init_poses[i](r,c) = init_poses[i](r,c) + 0.09;
-    //     }
-    //     }
-    // } 
     
-    auto refined_poses_global = loadPosesKittiFormat("/home/duc/Desktop/Photometric/photobundle-master/apps/refined_poses_new_00_0.1_r1.txt");
-    auto refined_poses_global_2 = loadPosesKittiFormat("/home/duc/Desktop/Photometric/photobundle-master/apps/refined_poses_new_00_0.2_r1.txt");
+    auto refined_poses_global = loadPosesKittiFormat("/home/duc/Desktop/Photometric/photobundle-master/apps/refined_poses_new_00_03_r1.txt");
+    auto refined_poses_global_2 = loadPosesKittiFormat("/home/duc/Desktop/Photometric/photobundle-master/apps/refined_poses_new_00_02_r2.txt");
     auto refined_poses_global_origin = loadPosesKittiFormat("/home/duc/Desktop/Photometric/photobundle-master/apps/refined_poses_origin_00_r1.txt");
 
     std::ofstream ofs("error.txt");
@@ -49,14 +42,15 @@ int main(int argc, char** argv)
                 err_square_refined_origin += pow(refined_poses_global_origin[i](r,c) - gt_poses_global[i](r,c),2);
  
                 // error xyz
-                // err_square_refined += pow(refined_poses_global[i](r,3) - gt_poses_global[i](r,3),2);             
-                // err_square_init += pow(init_poses_global[i](r,3) - gt_poses_global[i](r,3),2);
+                // err_square_refined += pow(refined_poses_global[i](r,3) - gt_poses_global[i](r,3),2);
+                // err_square_refined_2  += pow(refined_poses_global_2[i](r,3) - gt_poses_global[i](r,3),2);          
+                // // err_square_init += pow(init_poses_global[i](r,3) - gt_poses_global[i](r,3),2);
                 // err_square_refined_origin += pow(refined_poses_global_origin[i](r,3) - gt_poses_global[i](r,3),2); 
             }
         }
 
         ofs //<< "frame" << i  
-            <<"\t" 
+            //<<"\t" 
             << (sqrt(fabs(err_square_refined)))
             <<"\t" 
             << (sqrt(fabs(err_square_refined_2)))
