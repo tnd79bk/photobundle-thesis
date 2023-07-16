@@ -94,7 +94,7 @@ PhotometricBundleAdjustment::Options::Options(const utils::ConfigFile& cf)
   : alpha(cf.get<double>("Alpha")),
     maxNumPoints(cf.get<int>("maxNumPoints", 4096)),
     slidingWindowSize(cf.get<int>("slidingWindowSize", 5)),
-    patchRadius(cf.get<int>("patchRadius", 2)),
+    patchRadius(cf.get<int>("patchRadius", 1)),
     maskBlockRadius(cf.get<int>("maskBlockRadius", 1)),
     maxFrameDistance(cf.get<int>("maxFrameDistance", 1)),
     numThreads(cf.get<int>("numThreads", -1)),
@@ -754,12 +754,6 @@ class PhotometricBundleAdjustment::DescriptorError
       const auto& G = _frame->getChannelGradient(k);
       const auto& Gx = G.Ix();
       const auto& Gy = G.Iy();
-      //const std::vector<double> image1 = pt->descriptor();
-      //result->intensity1 = I;
-      // std::vector<T> _result.intensity1;
-      // std::vector<T> _result.gx1;
-      // std::vector<T> _result.gy1;
-
       for(int y = -_radius, j = 0; y <= _radius; ++y) {
         const T v = v_w + T(y);
         for(int x = -_radius; x <= _radius; ++x, ++i, ++j) {
@@ -774,12 +768,6 @@ class PhotometricBundleAdjustment::DescriptorError
           const T i1 = SampleWithDerivative(I, Gx, Gy, u, v);
           const T Gx1 = SampleWithDerivativeGx(I, Gx, Gy, u, v);
           const T Gy1 = SampleWithDerivativeGy(I, Gx, Gy, u, v);
-          // _result->intensity1[i]= i1;
-          // _result->gx1[i] = Gx1;
-          // _result->gy1[i] = Gy1;
-          // _p1[i] = (i1);
-          // _Gx1[i] = (Gx1);
-          // _Gy1[i] = (Gy1);
           
           // add compare gradient
           //residuals[i] = _patch_weights[j] * (i0 - i1);
@@ -787,9 +775,6 @@ class PhotometricBundleAdjustment::DescriptorError
           //residuals[i] = _patch_weights[j] * (i0 - i1 + 0.1*(Gxi-Gx1) + 0.1*(Gyi-Gy1));
         }
       }
-      // _result->intensity1 = std::vector<ceres::Jet<double, 9> >(_p1);
-      // _result->gx1 = std::vector<ceres::Jet<double, 9> >(_Gx1);
-      // _result->gy1 = std::vector<ceres::Jet<double, 9> >(_Gy1);
     }
 
     // maybe we should return false if the point goes out of the image!
@@ -806,10 +791,6 @@ class PhotometricBundleAdjustment::DescriptorError
   const DescriptorFrame* _frame;
   const double* const _patch_weights;
   const double _alpha;
-  //Result* _result;
-  // const double* const _p1;
-  // const double* const _Gx1;
-  // const double* const _Gy1;
 }; // DescriptorError
 
 static inline ceres::Solver::Options
@@ -943,29 +924,27 @@ void PhotometricBundleAdjustment::optimize(Result* result,double alpha,int _fram
 
     result->poses = _trajectory.poses();
 
-    //const auto npts = points_to_remove.size() + refinedPoints.size();
-    //auto size_i = result->refinedPoints.size();
-    const auto npts = points_to_remove.size();
-    result->refinedPoints.resize(npts + 4096 * (_frame_id-4));
-    result->originalPoints.resize(npts + 4096 * (_frame_id-4));
+    // const auto npts = points_to_remove.size();
+    // result->refinedPoints.resize(npts + 4096 * (_frame_id-4));
+    // result->originalPoints.resize(npts + 4096 * (_frame_id-4));
 
-    std::ofstream f("refined_points_new_00_03_r2.txt", std::ios::app);
-    //f.open("refined_points_origin_test.txt",ios::out | ios::app);
-    for(size_t i = 0; i < npts; ++i) {
-      f<< points_to_remove[i]->X();
-      f<<"\n";
-    }
-    f.close();
+    // std::ofstream f("refined_points_new_00_04_r2.txt", std::ios::app);
+    // //f.open("refined_points_origin_test.txt",ios::out | ios::app);
+    // for(size_t i = 0; i < npts; ++i) {
+    //   f<< points_to_remove[i]->X();
+    //   f<<"\n";
+    // }
+    // f.close();
 
 
-    //const auto npts = points_to_remove.size();
+    // const auto npts = points_to_remove.size();
     
     // result->refinedPoints.resize(npts + 4096 * (_frame_id-4));
     // result->originalPoints.resize(npts + 4096 * (_frame_id-4));
-    //for(size_t i = 0; i < npts; ++i) {
-      //result->refinedPoints[i + 4096 * (_frame_id-4)] = points_to_remove[i]->X();
-      //result->originalPoints[i + 4096 * (_frame_id-4)] = points_to_remove[i]->getOriginalPoint();
-    //}
+    // for(size_t i = 0; i < npts; ++i) {
+    //   result->refinedPoints[i + 4096 * (_frame_id-4)] = points_to_remove[i]->X();
+    //   result->originalPoints[i + 4096 * (_frame_id-4)] = points_to_remove[i]->getOriginalPoint();
+    // }
 
     result->initialCost = summary.initial_cost;
     result->finalCost   = summary.final_cost;

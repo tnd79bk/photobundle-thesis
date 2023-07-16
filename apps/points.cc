@@ -14,8 +14,8 @@
 // }
 
 int main() {
-    std::ifstream inputFile("refined_points_origin_test_2.txt");
-    std::ofstream outputFile("output_2.txt");
+    std::ifstream inputFile("refined_points_origin_test_00_03_r2.txt");
+    std::ofstream outputFile("output_3.txt");
 
     if (inputFile && outputFile) {
         std::string line;

@@ -21,7 +21,7 @@ int main(int argc, char** argv)
 
   utils::ProgramOptions options;
   options
-      ("output,o", "./poses/refined_poses_new_00_03_r2.txt", "trajectory output file")
+      ("output,o", "./poses/refined_poses_origin_03_r1.txt", "trajectory output file")
       ("config,c", "../config/kitti_stereo.cfg", "config file")
       .parse(argc, argv);
 

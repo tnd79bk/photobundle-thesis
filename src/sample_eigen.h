@@ -133,12 +133,6 @@ T SampleWithDerivativeGx(const TImage & intensityImage,
                        const TImage2 & intensityGradientY,
                        const T & x,
                        const T & y)
-// void SampleWithDerivativeGx(  T i,  T Gx,  T Gy,
-//                         const TImage & intensityImage,
-//                         const TImage2 & intensityGradientX,
-//                         const TImage2 & intensityGradientY,
-//                         const T & x,
-//                         const T & y)
 {
   typedef TImage ImageType;
   typedef typename ImageType::Scalar PixelType;
@@ -152,12 +146,7 @@ T SampleWithDerivativeGx(const TImage & intensityImage,
                 scalar_y, scalar_x, sample );
   T xy[2] = { x, y };
 
-  // i = ceres::Chain< PixelType, 2, T >::Rule( sample[0], sample + 1, xy );
-  // Gx = ceres::Chain< PixelType, 2, T >::Rule( sample[1], sample + 1, xy );
-  // Gy = ceres::Chain< PixelType, 2, T >::Rule( sample[2], sample + 1, xy );
-
   return ceres::Chain< PixelType, 2, T >::Rule( sample[1], sample + 1, xy );
-  //return sample[1];
 }
 
 template< typename T, class TImage, class TImage2 >
@@ -180,7 +169,6 @@ T SampleWithDerivativeGy(const TImage & intensityImage,
   T xy[2] = { x, y };
 
   return ceres::Chain< PixelType, 2, T >::Rule( sample[2], sample + 1, xy );
-  //return sample[2];
 }
 
 #endif //
