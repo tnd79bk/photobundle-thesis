@@ -36,6 +36,8 @@ int main(int argc, char** argv)
   // Take pose (extrinsic matrix)
   auto T_init = loadPosesKittiFormat(cf.get<std::string>("trajectory"));  
 
+  auto output_fn = options.get<std::string>("output");
+
   PhotometricBundleAdjustment::Result result;
   PhotometricBundleAdjustment photoba(dataset->calibration(), dataset->imageSize(), {cf});
 
@@ -44,6 +46,9 @@ int main(int argc, char** argv)
   cv::Mat_<float> zmap;
   UniquePointer<DatasetFrame> frame;
   for(int f_i = 0; (frame = dataset->getFrame(f_i)) && !gStop; ++f_i) {
+  
+    printf("Test : %s",output_fn.c_str());
+    
     printf("Frame %05d\n", f_i);
 
 
@@ -67,7 +72,7 @@ int main(int argc, char** argv)
     }
   }
   
-  auto output_fn = options.get<std::string>("output");
+//  auto output_fn = options.get<std::string>("output");
   Info("Writing refined poses to %s\n", output_fn.c_str());
   writePosesKittiFormat(output_fn, result.poses);
   // Info("Alpha: %s\n",cf.get<std::string>("alpha"));

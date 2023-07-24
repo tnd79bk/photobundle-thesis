@@ -50,7 +50,7 @@ void ComputeMeanRPE(PoseList &poses_gt,PoseList &poses_result,int step_size,cons
     // pre-compute distances (from ground truth as reference)
     std::vector<double> dist = trajectory_distances(poses_gt);
 
-    double mean_rpe = 0;
+    double avg_err_t = 0 , avg_err_r = 0;
 
 
         
@@ -78,15 +78,18 @@ void ComputeMeanRPE(PoseList &poses_gt,PoseList &poses_result,int step_size,cons
             t_err += translation_error(pose_error)/len;
             r_err += rotation_error(pose_error)/len;
 
-            mean_rpe += t_err / len;
             num_total++;
        
         }
         ofs << "Len: " << len << " t_err: " << t_err/num_total << " r_err: " << r_err*180/(num_total*3.141592653589)  <<" \n"; 
+        avg_err_t += t_err/num_total;
+        avg_err_r += r_err*180/(num_total*3.141592653589);
     }
+    
 
-
-
+    avg_err_t = avg_err_t / num_lengths;
+    avg_err_r = avg_err_r / num_lengths;
+    ofs << "Avarage Error : T = " << avg_err_t << "  and   r = " << avg_err_r;
     
     //return ((mean_rpe / static_cast<double>(num_total)) * 100.0);
 }
@@ -97,9 +100,8 @@ int main() {
     auto init_poses = loadPosesKittiFormat("/home/duc/Desktop/Photometric/photobundle-master/data/kitti_init_poor/00.txt");
     auto init_poses_global = convertPoseToWorld(init_poses);
     
-    auto refined_poses_global = loadPosesKittiFormat("/home/duc/Desktop/Photometric/photobundle-master/apps/poses/refined_poses_new_00_04_r2.txt");
-    auto refined_poses_global_2 = loadPosesKittiFormat("/home/duc/Desktop/Photometric/photobundle-master/apps/poses/refined_poses_new_00_03_r2.txt");
-    auto refined_poses_global_origin = loadPosesKittiFormat("/home/duc/Desktop/Photometric/photobundle-master/apps/poses/refined_poses_origin_00_r1.txt");
+    auto refined_poses_global = loadPosesKittiFormat("/home/duc/Desktop/Photometric/photobundle-master/apps/poses/refined_poses_new_00_04_03_r1.txt");
+    auto refined_poses_global_origin = loadPosesKittiFormat("/home/duc/Desktop/Photometric/photobundle-master/apps/poses/refined_poses_origin_08_r2.txt");
 
     //std::ofstream ofs("t_r_error.txt");
 
@@ -112,7 +114,7 @@ int main() {
     }
     
     //double MeanRPE = 
-    std::ofstream ofs("./eval_result/eval_t_r_error_new_00_04_r2.txt");
+    std::ofstream ofs("./eval_result/eval_t_r_error_new_04_03_r1.txt");
     
     ComputeMeanRPE(refined_poses_global,poses_gt,10,lengths,ofs);
 

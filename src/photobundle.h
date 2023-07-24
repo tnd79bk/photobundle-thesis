@@ -30,6 +30,7 @@ class PhotometricBundleAdjustment
    */
   struct Options
   {
+  
     /** coefficient of compare gradient*/
     double alpha;
 

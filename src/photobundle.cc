@@ -644,7 +644,7 @@ addFrame(const uint8_t* I_ptr, const float* Z_ptr, const Mat44& T, Result* resul
   _frame_buffer.push_back(DescriptorFramePointer(frame));
 
   if(_frame_buffer.full()) {
-    optimize(result,_options.alpha,_frame_id);
+    optimize(result,_options.alpha);
   }
 
   ++_frame_id;
@@ -819,7 +819,7 @@ GetSolverOptions(int num_threads, bool verbose = false, double tol = 1e-6)
 }
 
 
-void PhotometricBundleAdjustment::optimize(Result* result,double alpha,int _frame_id)
+void PhotometricBundleAdjustment::optimize(Result* result,double alpha)
 {
   auto frame_id_start = _frame_buffer.front()->id(),
        frame_id_end   = _frame_buffer.back()->id();

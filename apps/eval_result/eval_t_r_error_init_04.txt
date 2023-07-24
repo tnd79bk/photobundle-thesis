@@ -1,0 +1,9 @@
+Len: 100 t_err: 0.00891806 r_err: 0.0018821 
+Len: 200 t_err: 0.00925977 r_err: 0.00133047 
+Len: 300 t_err: 0.0095832 r_err: 0.0010932 
+Len: 400 t_err: -nan r_err: -nan 
+Len: 500 t_err: -nan r_err: -nan 
+Len: 600 t_err: -nan r_err: -nan 
+Len: 700 t_err: -nan r_err: -nan 
+Len: 800 t_err: -nan r_err: -nan 
+Avarage Error : T = -nan  and   r = -nan
