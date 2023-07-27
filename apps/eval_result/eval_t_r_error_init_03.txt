@@ -1,9 +1,9 @@
-Len: 100 t_err: 0.01214 r_err: 0.00896244 
-Len: 200 t_err: 0.0130681 r_err: 0.00714679 
-Len: 300 t_err: 0.0153219 r_err: 0.00575153 
-Len: 400 t_err: 0.0163946 r_err: 0.0048702 
-Len: 500 t_err: 0.0124931 r_err: 0.00339472 
-Len: 600 t_err: -nan r_err: -nan 
-Len: 700 t_err: -nan r_err: -nan 
-Len: 800 t_err: -nan r_err: -nan 
+0.01214	0.00896244 
+0.0130681	0.00714679 
+0.0153219	0.00575153 
+0.0163946	0.0048702 
+0.0124931	0.00339472 
+-nan	-nan 
+-nan	-nan 
+-nan	-nan 
 Avarage Error : T = -nan  and   r = -nan
