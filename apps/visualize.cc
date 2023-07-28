@@ -15,28 +15,28 @@
 
 int main(int argc, char** argv)
 {
-    auto gt_poses_global = loadPosesKittiFormat("/home/duc/Desktop/Photometric/data/data_odometry_poses/dataset/poses/10.txt");
+    auto gt_poses_global = loadPosesKittiFormat("/home/duc/Desktop/Photometric/data/data_odometry_poses/dataset/poses/01.txt");
 
-    auto init_poses = loadPosesKittiFormat("/home/duc/Desktop/Photometric/photobundle-master/data/kitti_init_poor/10.txt");
+    auto init_poses = loadPosesKittiFormat("/home/duc/Desktop/Photometric/photobundle-master/data/kitti_init_poor/01.txt");
     auto init_poses_global = convertPoseToWorld(init_poses);
     
-    auto refined_poses_global = loadPosesKittiFormat("/home/duc/Desktop/Photometric/photobundle-master/apps/poses/refined_poses_new_10_03_r2.txt");
+    auto refined_poses_global = loadPosesKittiFormat("/home/duc/Desktop/Photometric/photobundle-master/apps/poses/refined_poses_new_01_01_r1.txt");
     
-    //auto refined_poses_global_2 = loadPosesKittiFormat("/home/duc/Desktop/Photometric/photobundle-master/apps/poses/refined_poses_new_03_01_r1.txt");
+    //auto refined_poses_global_2 = loadPosesKittiFormat("/home/duc/Desktop/Photometric/photobundle-master/apps/poses/refined_poses_new_01_01_r1.txt");
     
-    auto refined_poses_global_origin = loadPosesKittiFormat("/home/duc/Desktop/Photometric/photobundle-master/apps/poses/refined_poses_origin_10_r1.txt");
+    auto refined_poses_global_origin = loadPosesKittiFormat("/home/duc/Desktop/Photometric/photobundle-master/apps/poses/refined_poses_origin_01_r1.txt");
 
     auto pose = refined_poses_global;
 
 
-    std::ofstream ofs("./xz/xz-gt-10.txt");
-    std::ofstream ofs2("./xz/xz-init-10.txt");
-    std::ofstream ofs3("./xz/xz-origin-10.txt");
-    std::ofstream ofs4("./xz/xz-new-10.txt");    
+    std::ofstream ofs("./xz/xz-gt-01.txt");
+    std::ofstream ofs2("./xz/xz-init-01.txt");
+    std::ofstream ofs3("./xz/xz-origin-01.txt");
+    std::ofstream ofs4("./xz/xz-new-01.txt");    
     
     for(size_t i = 0; i < pose.size(); ++i) {
 
-        //ofs << gt_posesstd::ofstream ofs2("./xz/xyz-init-10.txt");_global[i](0,3) << "," << gt_poses_global[i](1,3) << "," << gt_poses_global[i](2,3) << "\n";
+        //ofs << gt_posesstd::ofstream ofs2("./xz/xyz-init-01.txt");_global[i](0,3) << "," << gt_poses_global[i](1,3) << "," << gt_poses_global[i](2,3) << "\n";
         ofs << gt_poses_global[i](0,3) << "\t" << gt_poses_global[i](2,3) << "\n";
 
     }
@@ -70,7 +70,7 @@ int main(int argc, char** argv)
     }
     
     
-    //std::ofstream ofs5("./xyz/xyz_new_03_01_r1.txt");
+    //std::ofstream ofs5("./xyz/xyz_new_01_01_r1.txt");
 
 
     //for(size_t i = 0; i < pose.size(); ++i) { ofs5 << refined_poses_global_2[i](0,3) << "," << refined_poses_global_2[i](1,3) << "," << refined_poses_global_2[i](2,3) << "\n";}
