@@ -113,6 +113,8 @@ class PhotometricBundleAdjustment
     double fixedCost    = -1.0; //< fixed cost not included in optimization
 
     int numSuccessfulStep = 0; //< number of successfull optimizer steps
+    int numUnsuccessfulStep = 0; //< number of successfull optimizer steps
+
     int numResiduals      = 0; //< number of residuals in the problem
 
     double totalTime = -1.0;   //< total optimization run time in seconds

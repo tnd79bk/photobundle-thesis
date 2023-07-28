@@ -1,0 +1,9 @@
+0.00891806	0.0018821 
+0.00925977	0.00133047 
+0.0095832	0.0010932 
+-nan	-nan 
+-nan	-nan 
+-nan	-nan 
+-nan	-nan 
+-nan	-nan 
+Avarage Error : T = -nan  and   r = -nan

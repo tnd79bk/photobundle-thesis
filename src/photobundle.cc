@@ -950,6 +950,8 @@ void PhotometricBundleAdjustment::optimize(Result* result,double alpha)
     result->finalCost   = summary.final_cost;
     result->fixedCost   = summary.fixed_cost;
     result->numSuccessfulStep = summary.num_successful_steps;
+
+    result->numUnsuccessfulStep = summary.num_unsuccessful_steps;
     result->totalTime = summary.total_time_in_seconds;
     result->numResiduals = summary.num_residuals;
     result->message = std::string(summary.message);
