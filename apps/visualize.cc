@@ -15,24 +15,24 @@
 
 int main(int argc, char** argv)
 {
-    auto gt_poses_global = loadPosesKittiFormat("/home/duc/Desktop/Photometric/data/data_odometry_poses/dataset/poses/08.txt");
+    auto gt_poses_global = loadPosesKittiFormat("/home/duc/Desktop/Photometric/data/data_odometry_poses/dataset/poses/05.txt");
 
-    auto init_poses = loadPosesKittiFormat("/home/duc/Desktop/Photometric/photobundle-master/data/kitti_init_poor/08.txt");
+    auto init_poses = loadPosesKittiFormat("/home/duc/Desktop/Photometric/photobundle-master/data/kitti_init_poor/05.txt");
     auto init_poses_global = convertPoseToWorld(init_poses);
     
-    auto refined_poses_global = loadPosesKittiFormat("/home/duc/Desktop/Photometric/photobundle-master/apps/poses/refined_poses_new_08_03_r2.txt");
+    auto refined_poses_global = loadPosesKittiFormat("/home/duc/Desktop/Photometric/photobundle-master/apps/poses/refined_poses_new_05_03_r2.txt");
     
     //auto refined_poses_global_2 = loadPosesKittiFormat("/home/duc/Desktop/Photometric/photobundle-master/apps/poses/refined_poses_new_08_08_r1.txt");
     
-    auto refined_poses_global_origin = loadPosesKittiFormat("/home/duc/Desktop/Photometric/photobundle-master/apps/poses/refined_poses_origin_08_r1.txt");
+    auto refined_poses_global_origin = loadPosesKittiFormat("/home/duc/Desktop/Photometric/photobundle-master/apps/poses/refined_poses_origin_05_r1.txt");
 
     auto pose = refined_poses_global;
 
 
-    std::ofstream ofs("./xz/xz-gt-08.txt");
-    std::ofstream ofs2("./xz/xz-init-08.txt");
-    std::ofstream ofs3("./xz/xz-origin-08.txt");
-    std::ofstream ofs4("./xz/xz-new-08.txt");    
+    std::ofstream ofs("./xz/xz-gt-05.txt");
+    std::ofstream ofs2("./xz/xz-init-05.txt");
+    std::ofstream ofs3("./xz/xz-origin-5.txt");
+    std::ofstream ofs4("./xz/xz-new-05.txt");    
     
     for(size_t i = 0; i < pose.size(); ++i) {
 
